@@ -1,5 +1,6 @@
 import React from 'react';
 import '../static/css/App.css';
+import NavTripPage from '../components/Nav/NavTripPage';
 
 class CreateTrip extends React.Component {
     render() {
@@ -7,7 +8,7 @@ class CreateTrip extends React.Component {
             <div className="flex-wrapper">
 
                 <div className="top-page">
-                    Rom
+                <NavTripPage firsttitle={"ยินดีต้อนรับ"} secondtitle={"เริ่มสร้างแผนการท่องเที่ยว"} ></NavTripPage>    
                 </div>
                 <div className="content-page">
                     Natchanon
