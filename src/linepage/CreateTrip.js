@@ -11,6 +11,30 @@ const InputFrom = (props) => {
             <div class="col pt-4">
                 <label for="exampleInputEmail1">{props.inputname}</label>
                 <input type={props.inputtype} class="form-control" id={props.inputid} placeholder={props.textinplaceholder} />
+                
+            </div>
+        </div>
+    )
+}
+const InputAddDate = () => {
+    return (
+        <div class="col pt-4">
+            <label for="example-date-input">จำนวนวัน</label>
+            <div class="input-group">
+
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+                        <span class="fas fa-minus"></span>
+                    </button>
+                </span>
+
+                <input type="text" name="quant[1]" class="form-control input-number"/>
+
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1] ">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                    </button>
+                </span>
             </div>
         </div>
     )
@@ -30,8 +54,9 @@ class CreateTrip extends React.Component {
                             <InputFrom inputname="ชื่อทริป" inputtype="email" inputid="exampleInputEmail1" textinplaceholder="ใส่ชื่อทริปท่องเที่ยว"></InputFrom>
                             <InputFrom inputname="จังหวัด" inputtype="email" inputid="exampleInputEmail1" textinplaceholder="ใส่ชื่อจังหวัดที่ต้องการเดินทาง"></InputFrom>
                             <InputFrom inputname="วันที่เริ่มเดินทาง" inputtype="date" inputid="example-date-input" textinplaceholder="mm-dd-yyyy"></InputFrom>
-            
+                            <InputAddDate></InputAddDate>
                         </div>
+
 
                     </form>
                 </div>
