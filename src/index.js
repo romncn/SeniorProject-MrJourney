@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router,Route,browserHistory} from 'react-router';
 import App from './App';
 import CreateTrip from './linepage/CreateTrip';
+import CreateTripFinished from './linepage/CreateTripFinished';
 import CreateTripPerDay from './linepage/CreateTripPerDay';
 import Home from './webpage/Home';
 
@@ -16,6 +17,7 @@ ReactDOM.render(
     <Router history = {browserHistory}>
         <Route path="/" component={App}/>
         <Route path="/CreateTrip" component={CreateTrip}/>
+        <Route path="/CreateTripFinished" component={CreateTripFinished}/>
         <Route path="/CreateTripPerDay" component={CreateTripPerDay}/>
         <Route path="/Home" component={Home}/>
         
