@@ -10,6 +10,7 @@ const ShowRoomBox = () => {
             <div className="Show-Join-Room">
                 <div className="container">
                     <div className="row">
+
                         <div className="col-4">
                             <div className="col">
                             <img src={Logo} height="45" alt="MrJourney" />
@@ -20,8 +21,8 @@ const ShowRoomBox = () => {
                                             <h3 className="py-1">Let'Go Chonburi !</h3>
                                             <span className="py-1">Province : </span>
                                             <br /><span className="py-1">Date : </span>
-                                            <p/><i class="fas fa-user fa-lg ml-2" style={{color:"pink"}}></i>
-                                            <i class="fas fa-user fa-lg ml-2 mb-0" style={{color:"blue"}}></i>
+                                            <p/><i class="fas fa-user fa-lg ml-2" style={{color:"dodgerblue"}}></i>
+                                            <i class="fas fa-user fa-lg ml-2 mb-0" style={{color:"hotpink"}}></i>
                                             <br/><span className="mt-0 ml-2" style={{fontSize:"8px"}}>อายุ 20 ปีขึ้นไป</span>
                                             <p className="text-right" style={{fontSize:"13px"}}>ผู้สร้าง chutikann</p>
                                         </div>
@@ -37,12 +38,6 @@ const ShowRoomBox = () => {
                                 </div>
                             </div>
                         </div>
-
-                        
-
-
-
-
 
                     </div>
                 </div>

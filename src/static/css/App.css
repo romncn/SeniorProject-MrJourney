@@ -5,3 +5,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+body {
+    font-family: 'Kanit', sans-serif;
+}
