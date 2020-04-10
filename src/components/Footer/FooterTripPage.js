@@ -4,11 +4,8 @@ import React from 'react';
 const FooterTripPage = (props) => {
 
     return (
-        <div>
-                <footer class="bg-warning text-white text-center" style={{ color: "white",height:50}}>               
-                        <h4>{props.footertext}</h4>                 
-                </footer>
-          
+        <div className="container py-3">
+            <button type="button" class="btn btn-warning btn-lg btn-block text-white">{props.footertext}</button>
         </div>
     )
 

@@ -5,7 +5,15 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
+/* 
+.btn-outline-dark:hover{
+    color: rgb(255, 255, 255);
+    background-color: #f06718;
+    border-color: #f8f8f8; 
+} */
+.province-btn{
+    border-color: #d6d6d6; 
+}
 body {
     font-family: 'Kanit', sans-serif;
 }
