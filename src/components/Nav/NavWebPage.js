@@ -6,9 +6,6 @@ const NavWebPage = () => {
 
     return (
 
-
-
-
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-danger" style={{ color: "white" }}>
                 <a href="/Home" class="navbar-brand">
@@ -34,7 +31,7 @@ const NavWebPage = () => {
                         <li class="nav-item dropdown ">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user text-white"></i> <span className="text-white">Profile</span> </a>
+                                <i class="fas fa-user-circle fa-lg text-white"></i> <span className="text-white">Guest</span> </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                                 <a class="dropdown-item " href="#">My account</a>
                                 <a class="dropdown-item " href="#">Joined Room</a>
