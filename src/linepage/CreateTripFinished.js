@@ -31,7 +31,7 @@ class CreateTripFinished extends React.Component {
                     </Link>
                     <Link to="/CreateTripPerDay">
                         <div className="container py-3">
-                            <button type="button" class="btn btn-outline-warning btn-lg btn-block">ขอให้คุณสนุกกับการเดินทาง</button>
+                            <button type="button" class="btn btn-outline-warning btn-lg btn-block">กลับสู่ห้องแชท</button>
                         </div>
                     </Link>
 

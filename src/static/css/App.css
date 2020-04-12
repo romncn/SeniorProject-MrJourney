@@ -17,3 +17,10 @@
 body {
     font-family: 'Kanit', sans-serif;
 }
+
+.image_outer_container{
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50%;
+    position: relative;
+  }
