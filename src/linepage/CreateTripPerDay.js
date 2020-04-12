@@ -63,9 +63,20 @@ class CreateTripPerDay extends React.Component {
                 </div>
 
                 <div className="buttom-page">
-                    <Link to="/CreateTripPerDay" >
-                        <FooterTripPage footertext={"ต่อไป"}></FooterTripPage>
-                    </Link>
+                    <div className="col-12">
+                        <div className="row">
+                            <div className="col-3">
+                                <Link to="/CreateTrip" >
+                                    <FooterTripPage footertext={"ย้อนกลับ"}></FooterTripPage>
+                                </Link>
+                            </div>
+                            <div className="col-9">
+                                <Link to="/CreateTripPerDay" >
+                                    <FooterTripPage footertext={"เสร็จสิ้น"}></FooterTripPage>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
