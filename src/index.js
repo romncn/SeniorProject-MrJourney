@@ -7,6 +7,7 @@ import CreateTripFinished from './linepage/CreateTripFinished';
 import CreateTripPerDay from './linepage/CreateTripPerDay';
 import Home from './webpage/Home';
 import CreateJoinRoom from './webpage/CreateJoinRoom';
+import JoinedRoom from './webpage/JoinedRoom';
 import Profile from './webpage/Profile';
 
 
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route path="/CreateTripFinished" component={CreateTripFinished}/>
         <Route path="/CreateTripPerDay" component={CreateTripPerDay}/>
         <Route path="/CreateJoinRoom" component={CreateJoinRoom}/>
+        <Route path="/JoinedRoom" component={JoinedRoom}/>
         <Route path="/Home" component={Home}/>
         <Route path="/Profile" component={Profile}/>
         
