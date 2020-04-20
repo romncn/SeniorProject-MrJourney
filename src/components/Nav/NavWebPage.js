@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../static/img/logojourney.png';
+import Logo from '../../static/img/navlogo.png';
 import Swal from 'sweetalert2';
 import '../../static/css/Nav.css'
 
@@ -15,6 +15,8 @@ class NavWebPage extends React.Component {
             confirmButtonText: 'Login'
         })
     }
+
+
     constructor() {
         super();
         this.state = {
@@ -22,16 +24,15 @@ class NavWebPage extends React.Component {
         }
     }
     OpenSearch() {
-       this.setState({
-           showSearch: !this.state.showSearch
-       })
+        this.setState({
+            showSearch: !this.state.showSearch
+        })
     }
 
-
     render() {
-        
+
         return (
-            
+
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark nav-color" style={{ color: "white" }}>
                     <a href="/Home" class="navbar-brand">
@@ -43,17 +44,17 @@ class NavWebPage extends React.Component {
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav ml-auto">
                             <li className="nav-item mr-1">
-                                    {
-                                    this.state.showSearch?  
-                                     <form class="form-inline">     
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                                    </form>
-                                    :null
-                                    }      
+                                <button class="btn btn-outline-light my-2 my-sm-0" onClick={() => this.OpenSearch()}>Search</button>
                             </li>
-                            <li className="nav-item mr-1 ml-1">
-                                    <button class="btn btn-outline-light my-2 my-sm-0" onClick={()=>this.OpenSearch()}>Search</button>
-                                </li>    
+                            <li className="nav-item mr-1">
+                                {
+                                    this.state.showSearch ? // state ? true : false
+                                        <form class="form-inline">
+                                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                                        </form>
+                                        : null
+                                }
+                            </li>
                             <li className="nav-item">
                                 <button type="button" class="btn btn-light ml-2 mr-2 text-dark round" onClick={this.Alert}>Create Room
                                 <i className="fas fa-plus fa-sm ml-1" style={{ color: "dark" }}></i>
