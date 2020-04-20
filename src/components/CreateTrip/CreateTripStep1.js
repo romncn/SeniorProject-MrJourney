@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 // import NavTripPage from '../components/Nav/NavTripPage';
 import NavWebPage from '../../components/Nav/NavWebPage';
 import FooterTripPage from '../../components/Footer/FooterTripPage';
+import CreateTripTest from '../../linepage/CreateTripTest'
 
 
 const InputFrom = (props) => {
@@ -63,11 +64,10 @@ class CreateTripStep1 extends React.Component {
 
     render() {
         return (
-            <div className="flex-wrapper">
+            <div >
 
                 <div className="top-page">
                     {/* <NavTripPage firsttitle={"ยินดีต้อนรับ"} secondtitle={"เริ่มสร้างแผนการท่องเที่ยว"} ></NavTripPage> */}
-                    <NavWebPage></NavWebPage>
 
                     <div className="content-page">
                         <div className="container">
@@ -83,12 +83,12 @@ class CreateTripStep1 extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <div className="buttom-page">
-                    <Link to="/CreateTripPerDay" >
+               
+                {/* <div className="buttom-page fixed-bottom">
+                    <Link to="/CreateTrip" >
                         <FooterTripPage footertext={"ต่อไป"}></FooterTripPage>
                     </Link>
-                </div>
+                </div> */}
 
             </div>
         )

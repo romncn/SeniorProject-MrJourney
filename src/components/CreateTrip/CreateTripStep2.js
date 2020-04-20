@@ -4,15 +4,16 @@ import "../../static/css/Event-Trip.css";
 import { Link } from 'react-router';
 import NavWebPage from '../../components/Nav/NavWebPage';
 import FooterTripPage from '../../components/Footer/FooterTripPage';
+import CreateTripTest from '../../linepage/CreateTripTest';
 
 class CreateTripStep2 extends React.Component {
 
     render() {
         return (
-            <div className="flex-wrapper">
+            <div>
 
                 <div className="top-page">
-                    <NavWebPage></NavWebPage>
+                   
                     <div className="content-page py-3">
                         <div className="container">
                             <div class="alert event-box-active border-bottom" >
@@ -61,8 +62,8 @@ class CreateTripStep2 extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <div className="buttom-page">
+               
+                {/* <div className="buttom-page">
                     <div className="col-12">
                         <div className="row">
                             <div className="col-3">
@@ -71,13 +72,13 @@ class CreateTripStep2 extends React.Component {
                                 </Link>
                             </div>
                             <div className="col-9">
-                                <Link to="/CreateTripPerDay" >
+                                <Link to="/CreateTrip" >
                                     <FooterTripPage footertext={"เสร็จสิ้น"}></FooterTripPage>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </div>
         )

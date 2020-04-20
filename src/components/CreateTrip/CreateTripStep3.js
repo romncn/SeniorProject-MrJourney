@@ -10,10 +10,10 @@ class CreateTripStep3 extends React.Component {
 
     render() {
         return (
-            <div className="flex-wrapper">
+            <div>
 
                 <div className="top-page">
-                    <NavWebPage></NavWebPage>
+                    
                     <div className="content-page py-3">
                         <div className="container">
                             <div className="text-center">
@@ -25,7 +25,7 @@ class CreateTripStep3 extends React.Component {
                     </div>
                 </div>
 
-                <div className="buttom-page">
+                {/* <div className="buttom-page">
                     <Link to="/CreateTripPerDay" >
                         <FooterTripPage footertext={"ดูแผนการเดินทางทั้งหมด"}></FooterTripPage>
                     </Link>
@@ -35,7 +35,7 @@ class CreateTripStep3 extends React.Component {
                         </div>
                     </Link>
 
-                </div>
+                </div> */}
 
             </div>
         )

@@ -85,7 +85,7 @@ class CreateTrip extends React.Component {
                 </div>
 
                 <div className="buttom-page">
-                    <Link to="/CreateTripPerDay" >
+                    <Link to="/CreateTrip" >
                         <FooterTripPage footertext={"ต่อไป"}></FooterTripPage>
                     </Link>
                 </div>
