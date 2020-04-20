@@ -9,6 +9,7 @@ import Home from './webpage/Home';
 import CreateJoinRoom from './webpage/CreateJoinRoom';
 import JoinedRoom from './webpage/JoinedRoom';
 import Profile from './webpage/Profile';
+import CreateTripTest from './linepage/CreateTripTest';
 
 
 // ReactDOM.render
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Router history = {browserHistory}>
         <Route path="/" component={App}/>
         <Route path="/CreateTrip" component={CreateTrip}/>
+        <Route path="/CreateTripTest" component={CreateTripTest}/>
         <Route path="/CreateTripFinished" component={CreateTripFinished}/>
         <Route path="/CreateTripPerDay" component={CreateTripPerDay}/>
         <Route path="/CreateJoinRoom" component={CreateJoinRoom}/>
