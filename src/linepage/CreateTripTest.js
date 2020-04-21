@@ -18,18 +18,18 @@ class CreateTripTest extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            Component:  <CreateTripStep1></CreateTripStep1>,
+            Component: <CreateTripStep1></CreateTripStep1>,
             NumberComponent: 1
         }
     }
     handleNextComponent = async () => {
         if (this.state.NumberComponent !== 3) {
-            await this.setState({ NumberComponent: this.state.NumberComponent + 1})
+            await this.setState({ NumberComponent: this.state.NumberComponent + 1 })
             if (this.state.NumberComponent == 2) {
-                await this.setState({ Component: <CreateTripStep2></CreateTripStep2>})
+                await this.setState({ Component: <CreateTripStep2></CreateTripStep2> })
             }
             else if (this.state.NumberComponent == 3) {
-                await this.setState({ Component:  <CreateTripStep3></CreateTripStep3> })
+                await this.setState({ Component: <CreateTripStep3></CreateTripStep3> })
             }
         }
     }
@@ -37,7 +37,7 @@ class CreateTripTest extends React.Component {
         if (this.state.NumberComponent !== 1) {
             await this.setState({ NumberComponent: this.state.NumberComponent - 1 })
             if (this.state.NumberComponent == 1) {
-                await this.setState({ Component:  <CreateTripStep1></CreateTripStep1>})
+                await this.setState({ Component: <CreateTripStep1></CreateTripStep1> })
             }
             else if (this.state.NumberComponent == 2) {
                 await this.setState({ Component: <CreateTripStep2></CreateTripStep2> })
@@ -51,13 +51,22 @@ class CreateTripTest extends React.Component {
                     <NavWebPage></NavWebPage>
                 </div>
                 <div className="Content-Component">
-    
+
                     {this.state.Component}
                 </div>
-                <div className="buttom-page fixed-bottom">
+                <div className="buttom-page fixed-bottom py-3">
                     <div className="container py-3">
-                        <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.handlePreviousComponent}>ย้อนกลับ</button>
-                        <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.handleNextComponent} >ต่อไป</button>
+
+                        {/* <div className="row">                               */}
+                              <div className="col-2 float-left ml-4">
+                            <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.handlePreviousComponent}>ย้อนกลับ</button>
+                        </div>
+                            <div className=" col-2 float-right mr-4">
+                                <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.handleNextComponent} >ต่อไป</button>
+                            </div>
+                        {/* </div> */}
+
+
                     </div>
                 </div>
             </div>
