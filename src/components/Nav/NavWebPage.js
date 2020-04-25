@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../../static/img/navlogo.png';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 import '../../static/css/Nav.css'
 
 
@@ -55,6 +56,14 @@ class NavWebPage extends React.Component {
                                         : null
                                 }
                             </li>
+                            <li className="nav-item mr-1">
+                                <Link to="/CreateTrip">
+                                    <button type="button" class="btn btn-light ml-2 mr-2 text-dark round">Create Trip
+                                <i className="fas fa-plus fa-sm ml-1" style={{ color: "dark" }}></i>
+                                    </button>
+                                </Link>
+                            </li>
+
                             <li className="nav-item">
                                 <button type="button" class="btn btn-light ml-2 mr-2 text-dark round" onClick={this.Alert}>Create Room
                                 <i className="fas fa-plus fa-sm ml-1" style={{ color: "dark" }}></i>

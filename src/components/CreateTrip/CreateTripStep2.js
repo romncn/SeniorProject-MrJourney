@@ -4,7 +4,7 @@ import "../../static/css/Event-Trip.css";
 import { Link } from 'react-router';
 import NavWebPage from '../../components/Nav/NavWebPage';
 import FooterTripPage from '../../components/Footer/FooterTripPage';
-import CreateTripTest from '../../linepage/CreateTripTest';
+
 
 class CreateTripStep2 extends React.Component {
 
@@ -13,7 +13,7 @@ class CreateTripStep2 extends React.Component {
             <div>
 
                 <div className="top-page">
-                   
+
                     <div className="content-page py-3">
                         <div className="container">
                             <div class="alert event-box-active border-bottom" >
@@ -59,10 +59,23 @@ class CreateTripStep2 extends React.Component {
                                 <span className="float-right"><i class="fas fa-caret-down"></i></span>
 
                             </div>
+
+                            <div className="buttom-page fixed-bottom py-3">
+                                <div className="container py-3">
+                                    <div className="col-2 float-left ml-4">
+                                        <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.props.handlePreviousStep}>ย้อนกลับ</button>
+                                    </div>
+                                    <div className=" col-2 float-right mr-4">
+                                        <button type="button" class="btn btn-warning btn-lg btn-block text-white"onClick={this.props.handleStep}>เสร็จสิ้น</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-               
+
                 {/* <div className="buttom-page">
                     <div className="col-12">
                         <div className="row">

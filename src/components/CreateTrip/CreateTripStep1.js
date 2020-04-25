@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 // import NavTripPage from '../components/Nav/NavTripPage';
 import NavWebPage from '../../components/Nav/NavWebPage';
 import FooterTripPage from '../../components/Footer/FooterTripPage';
-import CreateTripTest from '../../linepage/CreateTripTest'
+
 
 
 const InputFrom = (props) => {
@@ -62,7 +62,7 @@ const InputAddDate = () => {
 class CreateTripStep1 extends React.Component {
 
 
-    render() {
+    render(props) {
         return (
             <div >
 
@@ -73,23 +73,24 @@ class CreateTripStep1 extends React.Component {
                         <div className="container">
                             <form>
                                 <div class="form-group">
-                                    <InputFrom inputname="ชื่อทริป" inputtype="email" inputid="exampleInputEmail1" textinplaceholder="ใส่ชื่อทริปท่องเที่ยว"></InputFrom>
-                                    {/* <InputFrom inputname="จังหวัด" inputtype="email" inputid="exampleInputEmail1" textinplaceholder="ใส่ชื่อจังหวัดที่ต้องการเดินทาง"></InputFrom> */}
+                                    <InputFrom inputname="ชื่อทริป" inputtype="email" inputid="exampleInputEmail1" textinplaceholder="ใส่ชื่อทริปท่องเที่ยว" />
                                     <SelectProvince></SelectProvince>
                                     <InputFrom inputname="วันที่เริ่มเดินทาง" inputtype="date" inputid="example-date-input" textinplaceholder="mm-dd-yyyy"></InputFrom>
                                     <InputAddDate></InputAddDate>
+                                </div>
+
+
+                                <div className="buttom-page fixed-bottom py-3">
+                                    <div className="container py-3">
+                                        <div className=" col-2 float-right mr-4">
+                                            <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.props.handleStep}>{this.props.nextButton}</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-               
-                {/* <div className="buttom-page fixed-bottom">
-                    <Link to="/CreateTrip" >
-                        <FooterTripPage footertext={"ต่อไป"}></FooterTripPage>
-                    </Link>
-                </div> */}
-
             </div>
         )
     }

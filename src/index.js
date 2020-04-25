@@ -7,7 +7,7 @@ import Home from './webpage/Home';
 import CreateJoinRoom from './webpage/CreateJoinRoom';
 import JoinedRoom from './webpage/JoinedRoom';
 import Profile from './webpage/Profile';
-import CreateTripTest from './linepage/CreateTripTest';
+import CheckTrip from './linepage/CheckTrip';
 
 
 // ReactDOM.render
@@ -18,8 +18,8 @@ import CreateTripTest from './linepage/CreateTripTest';
 ReactDOM.render(
     <Router history = {browserHistory}>
         <Route path="/" component={App}/>
+        <Route path="/CheckTrip" component={CheckTrip}/>
         <Route path="/CreateTrip" component={CreateTrip}/>
-        <Route path="/CreateTripTest" component={CreateTripTest}/>
         <Route path="/CreateJoinRoom" component={CreateJoinRoom}/>
         <Route path="/JoinedRoom" component={JoinedRoom}/>
         <Route path="/Home" component={Home}/>
