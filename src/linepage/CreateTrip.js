@@ -5,6 +5,7 @@ import CreateTripStep2 from '../components/CreateTrip/CreateTripStep2';
 import NavWebPage from '../components/Nav/NavWebPage';
 import { Link } from 'react-router';
 import FooterTripPage from '../components/Footer/FooterTripPage';
+import FooterWebPage from '../components/Footer/FooterWebPage';
 import CreateTripStep3 from '../components/CreateTrip/CreateTripStep3';
 
 
@@ -25,13 +26,13 @@ class CreateTrip extends React.Component {
     }
 
 
-    
-    handleComponent = () =>{
-        if(this.state.StepComponent === 1){
+
+    handleComponent = () => {
+        if (this.state.StepComponent === 1) {
             return <CreateTripStep1 nextButton="ต่อไป" handleStep={this.handleNextComponent}></CreateTripStep1>
-        }if(this.state.StepComponent === 2){
+        } if (this.state.StepComponent === 2) {
             return <CreateTripStep2 handleStep={this.handleNextComponent} handlePreviousStep={this.handlePreviousComponent} ></CreateTripStep2>
-        }if(this.state.StepComponent === 3){
+        } if (this.state.StepComponent === 3) {
             return <CreateTripStep3 handleStep={this.handleNextComponent}></CreateTripStep3>
         }
     }
@@ -51,14 +52,19 @@ class CreateTrip extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className="Navbar-Component">
-                    <NavWebPage></NavWebPage>
-                </div>
-                <div className="Content-Component">
+            <div className="flex-wrapper">
+                <div className="top-page">
+                    <div className="Navbar-Component">
+                        <NavWebPage></NavWebPage>
+                    </div>
+                    <div className="Content-Component">
 
-                    {/* {this.state.Component} */}
-                    {this.handleComponent()}
+                        {/* {this.state.Component} */}
+                        {this.handleComponent()}
+                    </div>
+                </div>
+                <div className="footer-page">
+                    <FooterWebPage></FooterWebPage>
                 </div>
             </div>
         )

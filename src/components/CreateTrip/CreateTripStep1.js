@@ -5,6 +5,9 @@ import { Link } from 'react-router';
 import NavWebPage from '../../components/Nav/NavWebPage';
 import FooterTripPage from '../../components/Footer/FooterTripPage';
 
+import { Steps } from 'antd';
+
+const { Step } = Steps;
 
 
 const InputFrom = (props) => {
@@ -39,6 +42,7 @@ const SelectProvince = () => {
 const InputAddDate = () => {
     const [dateNum, setDateNum] = useState(0);
     return (
+
         <div class="col pt-4">
             <label for="example-date-input">จำนวนวัน<span className="p-1" style={{ color: "red" }}>*</span></label>
             <div class="input-group">
@@ -68,9 +72,16 @@ class CreateTripStep1 extends React.Component {
 
                 <div className="top-page">
                     {/* <NavTripPage firsttitle={"ยินดีต้อนรับ"} secondtitle={"เริ่มสร้างแผนการท่องเที่ยว"} ></NavTripPage> */}
-
-                    <div className="content-page">
+                    <div className="content-page py-3">
+                        <div className="step-createtrip">
+                            <Steps current={0}>
+                            <Step title="StartCreate" description="Create new trip" />
+                                <Step title="AddDetails" description="Add details per day" />
+                                <Step title="Finished" description="Ready to travel!" />
+                            </Steps>
+                        </div>
                         <div className="container">
+
                             <form>
                                 <div class="form-group">
                                     <InputFrom inputname="ชื่อทริป" inputtype="email" inputid="exampleInputEmail1" textinplaceholder="ใส่ชื่อทริปท่องเที่ยว" />
@@ -80,7 +91,7 @@ class CreateTripStep1 extends React.Component {
                                 </div>
 
 
-                                <div className="buttom-page fixed-bottom py-3">
+                                <div className="buttom-page py-3">
                                     <div className="container py-3">
                                         <div className=" col-2 float-right mr-4">
                                             <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.props.handleStep}>{this.props.nextButton}</button>

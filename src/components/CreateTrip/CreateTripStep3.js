@@ -6,6 +6,11 @@ import Logo from '../../static/img/success.png';
 import NavWebPage from '../../components/Nav/NavWebPage';
 import FooterTripPage from '../../components/Footer/FooterTripPage';
 
+import { Steps } from 'antd';
+
+const { Step } = Steps;
+
+
 class CreateTripStep3 extends React.Component {
 
     render() {
@@ -15,6 +20,13 @@ class CreateTripStep3 extends React.Component {
                 <div className="top-page">
 
                     <div className="content-page py-3">
+                        <div className="step-createtrip">
+                            <Steps current={2}>
+                            <Step title="StartCreate" description="Create new trip" />
+                                <Step title="AddDetails" description="Add details per day" />
+                                <Step title="Finished" description="Ready to travel!" />
+                            </Steps>
+                        </div>
                         <div className="container">
                             <div className="text-center">
                                 <img src={Logo} height="75" width="75" alt="Success"></img>
@@ -28,8 +40,8 @@ class CreateTripStep3 extends React.Component {
                                         <div className="row">
                                             <div className="col-3"></div>
                                             <div className="col-6 my-2">
-                                            <Link to="/CheckTrip">
-                                                <button type="button" class="btn btn-warning btn-lg btn-block text-white">ดูแผนการเดินทางทั้งหมด</button>
+                                                <Link to="/CheckTrip">
+                                                    <button type="button" class="btn btn-warning btn-lg btn-block text-white">ดูแผนการเดินทางทั้งหมด</button>
                                                 </Link>
                                             </div>
                                             <div className="col-3"></div>
@@ -40,7 +52,7 @@ class CreateTripStep3 extends React.Component {
                                             <div className="col-3"></div>
                                             <div className="col-6 my-2">
                                                 <Link to="/Home">
-                                                <button type="button" class="btn btn-warning btn-lg btn-block text-white">กลับสู่หน้าหลัก</button>
+                                                    <button type="button" class="btn btn-warning btn-lg btn-block text-white">กลับสู่หน้าหลัก</button>
                                                 </Link>
                                             </div>
                                             <div className="col-3"></div>
