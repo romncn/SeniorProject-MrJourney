@@ -19,7 +19,7 @@ class CreateTripStep3 extends React.Component {
 
                 <div className="top-page">
 
-                    <div className="content-page py-3">
+                    <div className="content-page py-2">
                         <div className="step-createtrip">
                             <Steps current={2}>
                             <Step title="StartCreate" description="Create new trip" />
@@ -27,7 +27,7 @@ class CreateTripStep3 extends React.Component {
                                 <Step title="Finished" description="Ready to travel!" />
                             </Steps>
                         </div>
-                        <div className="container">
+                        <div className="container py-3">
                             <div className="text-center">
                                 <img src={Logo} height="75" width="75" alt="Success"></img>
                                 <h1 className="pt-2">เสร็จสิ้น!</h1>

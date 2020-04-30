@@ -4,13 +4,29 @@ import "../../static/css/Event-Trip.css";
 import { Link } from 'react-router';
 import NavWebPage from '../../components/Nav/NavWebPage';
 import FooterTripPage from '../../components/Footer/FooterTripPage';
+import Swal from 'sweetalert2';
 
 
-import { Steps } from 'antd';
+import { Steps, Alert } from 'antd';
 
 const { Step } = Steps;
 
 class CreateTripStep2 extends React.Component {
+
+
+    Alert = () => {
+        
+            Swal.fire({
+               
+                text: 'ชื่อสถานที่',
+                input: 'text',
+                inputPlaceholder: 'ระบุกิจกรรมหรือสถานที่ที่จะไป',
+                showCancelButton: false,
+                confirmButtonColor: '#F37945',
+                confirmButtonText: 'Login'
+            })
+        
+    }
 
     render() {
         return (
@@ -18,7 +34,7 @@ class CreateTripStep2 extends React.Component {
 
                 <div className="top-page mb-3">
 
-                    <div className="content-page py-3">
+                    <div className="content-page py-2">
                         <div className="step-createtrip">
                             <Steps current={1}>
                                 <Step title="StartCreate" description="Create new trip" />
@@ -26,7 +42,7 @@ class CreateTripStep2 extends React.Component {
                                 <Step title="Finished" description="Ready to travel!" />
                             </Steps>
                         </div>
-                        <div className="container">
+                        <div className="container py-3">
                             <div class="alert event-box-active border-bottom" >
 
                                 <span style={{ color: "rgb(241, 82, 19)", fontSize: "24px" }}>14 สิงหาคม 2563</span>
@@ -55,7 +71,10 @@ class CreateTripStep2 extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <p className="text-center"><i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }}></i></p>
+                                <p className="text-center"><div className="add-details-button">
+                                    <i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }} onClick={this.Alert}></i>
+                                    </div>
+                                    </p>
 
                             </div>
                             <div class="alert event-box">

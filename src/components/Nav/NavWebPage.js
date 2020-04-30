@@ -7,14 +7,27 @@ import '../../static/css/Nav.css'
 
 // const NavWebPage = () => {
 class NavWebPage extends React.Component {
+
     Alert = () => {
-        Swal.fire({
-            title: 'อยากสร้างห้องงั้นหรอ?',
-            text: 'Login ก่อนสิ!',
-            showCancelButton: false,
-            confirmButtonColor: '#F37945',
-            confirmButtonText: 'Login'
-        })
+        if (this.state.myacc === 'guest') {
+            Swal.fire({
+                title: 'อยากสร้างห้องงั้นหรอ?',
+                text: 'Login ก่อนสิ!',
+                showCancelButton: false,
+                confirmButtonColor: '#F37945',
+                confirmButtonText: 'Login'
+            })
+        }else{
+            Swal.fire({
+                icon:"success",
+                title: 'สร้างห้องสำเร็จ',
+                text: 'ขอให้คุณสนุกกับการท่องเที่ยวนะ',
+                showCancelButton: true,
+                confirmButtonColor: '#31CC71',
+                confirmButtonText: 'เข้าสู่ห้อง',
+                cancelButtonText: 'กลับสู่หน้าหลัก',
+            })
+        }
     }
 
 
@@ -22,12 +35,34 @@ class NavWebPage extends React.Component {
         super();
         this.state = {
             showSearch: false,
+            myacc: 'guest'
         }
     }
     OpenSearch() {
         this.setState({
             showSearch: !this.state.showSearch
         })
+    }
+    AuthLine = async () => {
+        if (this.state.myacc === 'guest') {
+            await this.setState({ myacc: 'LineAcc' })
+        } else {
+            await this.setState({ myacc: 'guest' })
+        }
+
+    }
+    ShowLoginButton = () => {
+        if (this.state.myacc === 'guest') {
+            return <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                <a className="dropdown-item" onClick={this.AuthLine}>Sign In</a></div>
+        } else {
+            return <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                <a class="dropdown-item " href="#">My account</a>
+                <a class="dropdown-item " href="#">Joined Room</a>
+                <a class="dropdown-item " href="#">My Owner Room</a>
+                <a className="dropdown-item" onClick={this.AuthLine}>Sign Out</a>
+            </div>
+        }
     }
 
     render() {
@@ -74,13 +109,14 @@ class NavWebPage extends React.Component {
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-user-circle fa-lg text-white"></i> <span className="text-white">Guest</span> </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                                    <a className="dropdown-item" href="#">Sign In</a>
-                                    {/* <a class="dropdown-item " href="#">My account</a>
+                                {/* <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4"> */}
+                                <this.ShowLoginButton></this.ShowLoginButton>
+                                {/* <a className="dropdown-item" href="#">Sign In</a> */}
+                                {/* <a class="dropdown-item " href="#">My account</a>
                                     <a class="dropdown-item " href="#">Joined Room</a>
                                     <a class="dropdown-item " href="#">My Owner Room</a>
                                     <a class="dropdown-item " href="#">Log out</a> */}
-                                </div>
+                                {/* </div> */}
                             </li>
 
 

@@ -72,7 +72,7 @@ class CreateTripStep1 extends React.Component {
 
                 <div className="top-page">
                     {/* <NavTripPage firsttitle={"ยินดีต้อนรับ"} secondtitle={"เริ่มสร้างแผนการท่องเที่ยว"} ></NavTripPage> */}
-                    <div className="content-page py-3">
+                    <div className="content-page py-2">
                         <div className="step-createtrip">
                             <Steps current={0}>
                             <Step title="StartCreate" description="Create new trip" />
@@ -80,7 +80,7 @@ class CreateTripStep1 extends React.Component {
                                 <Step title="Finished" description="Ready to travel!" />
                             </Steps>
                         </div>
-                        <div className="container">
+                        <div className="container py-3">
 
                             <form>
                                 <div class="form-group">
