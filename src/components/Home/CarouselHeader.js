@@ -1,8 +1,5 @@
 import React from 'react';
-// import BgSlide1 from '../../static/img/bg-slide-test-1.jpg';
 import BgSlide1 from '../../static/img/pr-01.png';
-// import BgSlide2 from '../../static/img/bg-slide-test-2.jpg';
-// import BgSlide3 from '../../static/img/bg-slide-test-3.jpg';
 
 
 const CarouselHeader = () => {

@@ -16,7 +16,7 @@ const RoomDetails = () =>{
                 </div>
                 <h3>QrCode</h3>
                 <div className="text-center">
-                    <img src={ProfileImg} height="200px" width="200px" />
+                    <img src={ProfileImg} height="200px" width="200px" alt="QrCodeLineGroup" />
                 </div>
             </div>
         </div>

@@ -5,9 +5,9 @@ class FooterWebPage extends React.Component {
         return (
             <div>
 
-                <footer class="page-footer font-small bg-dark pt-4">
+                <footer className="page-footer font-small bg-dark pt-4">
 
-                    <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright:
+                    <div className="footer-copyright text-center py-3 text-white">© 2020 Copyright:
     <span style={{color:"orange"}}> MrJourney.com </span>
                     </div>
 

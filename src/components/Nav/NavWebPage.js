@@ -17,9 +17,9 @@ class NavWebPage extends React.Component {
                 confirmButtonColor: '#F37945',
                 confirmButtonText: 'Login'
             })
-        }else{
+        } else {
             Swal.fire({
-                icon:"success",
+                icon: "success",
                 title: 'สร้างห้องสำเร็จ',
                 text: 'ขอให้คุณสนุกกับการท่องเที่ยวนะ',
                 showCancelButton: true,
@@ -53,14 +53,22 @@ class NavWebPage extends React.Component {
     }
     ShowLoginButton = () => {
         if (this.state.myacc === 'guest') {
-            return <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+            return <div className="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
                 <a className="dropdown-item" onClick={this.AuthLine}>Sign In</a></div>
         } else {
             return <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                <a class="dropdown-item " href="#">My account</a>
-                <a class="dropdown-item " href="#">Joined Room</a>
-                <a class="dropdown-item " href="#">My Owner Room</a>
-                <a className="dropdown-item" onClick={this.AuthLine}>Sign Out</a>
+                <Link to="Profile">
+                    <a className="dropdown-item ">My account</a>
+                </Link>
+                <Link to="JoinedRoom">
+                    <a className="dropdown-item ">Joined Room</a>
+                </Link>
+                <Link to="MyOwnerRoom">
+                    <a className="dropdown-item " href="#">My Owner Room</a>
+                </Link>
+                <div onClick={this.AuthLine}>
+                    <a className="dropdown-item" >Sign Out</a>
+                </div>
             </div>
         }
     }
@@ -71,44 +79,44 @@ class NavWebPage extends React.Component {
 
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark nav-color" style={{ color: "white" }}>
-                    <a href="/Home" class="navbar-brand">
+                    <a href="/Home" className="navbar-brand">
                         <img src={Logo} height="45" alt="MrJourney" />
                     </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
+                    <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav ml-auto">
+                    <div className="collapse navbar-collapse" id="navbarCollapse">
+                        <ul className="navbar-nav ml-auto">
                             <li className="nav-item mr-1">
-                                <button class="btn btn-outline-light my-2 my-sm-0" onClick={() => this.OpenSearch()}>Search</button>
+                                <button className="btn btn-outline-light my-2 my-sm-0" onClick={() => this.OpenSearch()}>Search</button>
                             </li>
                             <li className="nav-item mr-1">
                                 {
                                     this.state.showSearch ? // state ? true : false
-                                        <form class="form-inline">
-                                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                                        <form className="form-inline">
+                                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                                         </form>
                                         : null
                                 }
                             </li>
                             <li className="nav-item mr-1">
                                 <Link to="/CreateTrip">
-                                    <button type="button" class="btn btn-light ml-2 mr-2 text-dark round">Create Trip
+                                    <button type="button" className="btn btn-light ml-2 mr-2 text-dark round">Create Trip
                                 <i className="fas fa-plus fa-sm ml-1" style={{ color: "dark" }}></i>
                                     </button>
                                 </Link>
                             </li>
 
                             <li className="nav-item">
-                                <button type="button" class="btn btn-light ml-2 mr-2 text-dark round" onClick={this.Alert}>Create Room
+                                <button type="button" className="btn btn-light ml-2 mr-2 text-dark round" onClick={this.Alert}>Create Room
                                 <i className="fas fa-plus fa-sm ml-1" style={{ color: "dark" }}></i>
                                 </button>
                             </li>
 
-                            <li class="nav-item dropdown ">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                            <li className="nav-item dropdown ">
+                                <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-user-circle fa-lg text-white"></i> <span className="text-white">Guest</span> </a>
+                                    <i className="fas fa-user-circle fa-lg text-white"></i> <span className="text-white">Guest</span> </a>
                                 {/* <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4"> */}
                                 <this.ShowLoginButton></this.ShowLoginButton>
                                 {/* <a className="dropdown-item" href="#">Sign In</a> */}

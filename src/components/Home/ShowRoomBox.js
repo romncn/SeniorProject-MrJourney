@@ -211,7 +211,7 @@ class ShowRoomBox extends React.Component {
                                                 </div>
 
                                                 {/* <p className="text-right" style={{ fontSize: "13px" }}>ผู้สร้าง chutikann</p> */}
-                                                <span className="pl-1 pr-1"><img src={Logo} class="image_outer_container" height="30px" width="30px" /></span>
+                                                <span className="pl-1 pr-1"><img src={Logo} class="image_outer_container" height="30px" width="30px" alt="owner-img" /></span>
                                                 <span style={{ fontSize: "13px" }}>ผู้สร้าง chutikann</span>
                                             </div>
                                             <div className="navbar pt-2">
@@ -245,7 +245,7 @@ class ShowRoomBox extends React.Component {
                                                 </div>
 
                                                 {/* <p className="text-right" style={{ fontSize: "13px" }}>ผู้สร้าง chutikann</p> */}
-                                                <span className="pl-1 pr-1"><img src={Logo} class="image_outer_container" height="30px" width="30px" /></span>
+                                                <span className="pl-1 pr-1"><img src={Logo} class="image_outer_container" height="30px" width="30px" alt="owner-img" /></span>
                                                 <span style={{ fontSize: "13px" }}>ผู้สร้าง chutikann</span>
                                             </div>
                                             <div className="navbar pt-2">
@@ -279,7 +279,7 @@ class ShowRoomBox extends React.Component {
                                                 </div>
 
                                                 {/* <p className="text-right" style={{ fontSize: "13px" }}>ผู้สร้าง chutikann</p> */}
-                                                <span className="pl-1 pr-1"><img src={Logo} class="image_outer_container" height="30px" width="30px" /></span>
+                                                <span className="pl-1 pr-1"><img src={Logo} class="image_outer_container" height="30px" width="30px" alt="owner-img" /></span>
                                                 <span style={{ fontSize: "13px" }}>ผู้สร้าง chutikann</span>
                                             </div>
                                             <div className="navbar pt-2">

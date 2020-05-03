@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../static/css/App.css';
 import { Link } from 'react-router';
 import Logo from '../../static/img/success.png';
-// import NavTripPage from '../components/Nav/NavTripPage';
-import NavWebPage from '../../components/Nav/NavWebPage';
-import FooterTripPage from '../../components/Footer/FooterTripPage';
 
 import { Steps } from 'antd';
 

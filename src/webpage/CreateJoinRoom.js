@@ -1,7 +1,6 @@
 import React from 'react';
 import NavWebPage from '../components/Nav/NavWebPage';
 import '../static/css/App.css';
-import { Link } from 'react-router';
 import CreateRoomStep1 from '../components/CreateRoom/CreateRoomStep1';
 
 class CreateJoinRoom extends React.Component {

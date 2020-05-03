@@ -1,8 +1,6 @@
 import React from 'react';
 import NavWebPage from '../components/Nav/NavWebPage';
 import '../static/css/App.css';
-import { Link } from 'react-router';
-import CreateRoomStep1 from '../components/CreateRoom/CreateRoomStep1';
 import CarouselHeader from '../components/Home/CarouselHeader';
 import ShowMembers from '../components/JoinedRoom/ShowMembers';
 import RoomDetails from '../components/JoinedRoom/RoomDetails';
