@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import '../../static/css/App.css';
 
-import { Steps } from 'antd';
-
-const { Step } = Steps;
-
 
 const InputFrom = (props) => {
     return (
@@ -71,11 +67,7 @@ class CreateTripStep1 extends React.Component {
                     {/* <NavTripPage firsttitle={"ยินดีต้อนรับ"} secondtitle={"เริ่มสร้างแผนการท่องเที่ยว"} ></NavTripPage> */}
                     <div className="content-page py-2">
                         <div className="step-createtrip">
-                            <Steps current={0}>
-                                <Step title="StartCreate" description="Create new trip" />
-                                <Step title="AddDetails" description="Add details per day" />
-                                <Step title="Finished" description="Ready to travel!" />
-                            </Steps>
+                           
                         </div>
                         <div className="container py-3">
 

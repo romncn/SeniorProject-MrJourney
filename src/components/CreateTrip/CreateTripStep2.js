@@ -2,15 +2,16 @@ import React from 'react';
 import '../../static/css/App.css';
 import "../../static/css/Event-Trip.css";
 import Swal from 'sweetalert2';
+import CreateTripModal from '../Modal/CreateTripModal'
 
-
-import { Steps } from 'antd';
-
-const { Step } = Steps;
 
 class CreateTripStep2 extends React.Component {
-
-
+    constructor(props) {
+        super(props)
+        this.state = {
+            addModalShow: false
+        }
+    }
     Alert = () => {
 
         Swal.fire({
@@ -26,16 +27,17 @@ class CreateTripStep2 extends React.Component {
     }
 
     render() {
+        let addModalClose = () =>
+            this.setState({
+                addModalShow: false
+            })
+
         return (
             <div>
                 <div className="top-page mb-3">
                     <div className="content-page py-2">
                         <div className="step-createtrip">
-                            <Steps current={1}>
-                                <Step title="StartCreate" description="Create new trip" />
-                                <Step title="AddDetails" description="Add details per day" />
-                                <Step title="Finished" description="Ready to travel!" />
-                            </Steps>
+
                         </div>
                         <div className="header-trip" style={{ marginLeft: "80px" }}>
                             <h3>ชื่อทริป : {this.props.TripForm.demoTripName}</h3>
@@ -85,7 +87,10 @@ class CreateTripStep2 extends React.Component {
                                             )
                                         })}
                                         <p className="text-center"><div className="add-details-button">
-                                            <i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }} onClick={this.Alert}></i>
+                                            <i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }}
+                                                onClick={() => this.setState({ addModalShow: true })}></i>
+                                            <CreateTripModal show={this.state.addModalShow}
+                                                onHide={addModalClose}></CreateTripModal>
                                         </div>
                                         </p>
                                     </div>
@@ -110,7 +115,10 @@ class CreateTripStep2 extends React.Component {
                                     </div>
                                 </div>
                                 <p className="text-center"><div className="add-details-button">
-                                    <i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }} onClick={this.Alert}></i>
+                                    <i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }}
+                                        onClick={() => this.setState({ addModalShow: true })}></i>
+                                    <CreateTripModal show={this.state.addModalShow}
+                                        onHide={addModalClose}></CreateTripModal>
                                 </div>
                                 </p>
                             </div>

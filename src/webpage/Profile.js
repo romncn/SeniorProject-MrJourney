@@ -1,17 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavWebPage from '../components/Nav/NavWebPage';
 import ProfileImg from '../static/img/bg-slide-test-1.jpg';
 import '../static/css/App.css';
-
-import { Tabs } from 'antd';
 import FooterWebPage from '../components/Footer/FooterWebPage';
 
-const { TabPane } = Tabs;
+import { Button, ButtonToolbar, Tabs, Tab } from 'react-bootstrap'
 
-function callback(key) {
-    console.log(key);
+const ProfileMoreDetail = () => {
+    const [key, setKey] = useState('home');
+    return (
+        <div>
+            <Tabs
+                id="controlled-tab-example"
+                activeKey={key}
+                onSelect={(k) => setKey(k)}
+            >
+                <Tab eventKey="home" title="Home">
+                    sadass
+        </Tab>
+                <Tab eventKey="profile" title="Profile">
+                    sfsafs
+        </Tab>
+                <Tab eventKey="contact" title="Contact" disabled>
+                    sfsaf
+        </Tab>
+            </Tabs>
+        </div>
+    )
 }
-
 
 
 class Profile extends React.Component {
@@ -33,7 +49,7 @@ class Profile extends React.Component {
                         </div>
                         <div className="container">
                             <div className="Profile-show-box mt-2" >
-
+                                <ProfileMoreDetail></ProfileMoreDetail>
                                 {/* <div className="bg-warning" style={{ width: "100%", height: "200px" }}> */}
                                 {/* <div className="navbar">
                                         <div className="Bio-box">
@@ -49,17 +65,7 @@ class Profile extends React.Component {
                                     <div className="display-show-box">
 
                                     </div> */}
-                                <Tabs onChange={callback} type="card">
-                                    <TabPane tab="Bio" key="1">
-                                        Content of Tab Pane 1
-                                    </TabPane>
-                                    <TabPane tab="Trip History" key="2">
-                                        Content of Tab Pane 2
-                                    </TabPane>
-                                    <TabPane tab="Room History" key="3">
-                                        Content of Tab Pane 3
-                                    </TabPane>
-                                </Tabs>
+                                
                                 {/* </div> */}
 
                             </div>

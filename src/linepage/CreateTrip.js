@@ -10,9 +10,6 @@ import CreateTripStep3 from '../components/CreateTrip/CreateTripStep3';
 
 
 
-
-
-
 class CreateTrip extends React.Component {
     constructor(props) {
         super(props)

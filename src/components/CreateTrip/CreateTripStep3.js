@@ -3,9 +3,6 @@ import '../../static/css/App.css';
 import { Link } from 'react-router';
 import Logo from '../../static/img/success.png';
 
-import { Steps } from 'antd';
-
-const { Step } = Steps;
 
 
 class CreateTripStep3 extends React.Component {
@@ -18,11 +15,7 @@ class CreateTripStep3 extends React.Component {
 
                     <div className="content-page py-2">
                         <div className="step-createtrip">
-                            <Steps current={2}>
-                            <Step title="StartCreate" description="Create new trip" />
-                                <Step title="AddDetails" description="Add details per day" />
-                                <Step title="Finished" description="Ready to travel!" />
-                            </Steps>
+                           
                         </div>
                         <div className="container py-3">
                             <div className="text-center">

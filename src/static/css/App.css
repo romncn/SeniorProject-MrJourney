@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.css';
+/* @import '~antd/dist/antd.css'; */
 
 .flex-wrapper{
     display: flex;
@@ -28,4 +28,4 @@ body {
 .step-createtrip{
     margin: 20px 60px 30px 60px;
 }
-.ant-steps-item-process .ant-steps-item-icon { background: #F37945; border-color:#F37945;}
+/* .ant-steps-item-process .ant-steps-item-icon { background: #F37945; border-color:#F37945;} */
