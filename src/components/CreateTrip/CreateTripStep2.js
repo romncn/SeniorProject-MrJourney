@@ -3,7 +3,9 @@ import '../../static/css/App.css';
 import "../../static/css/Event-Trip.css";
 import Swal from 'sweetalert2';
 import CreateTripModal from '../Modal/CreateTripModal'
-
+import LogoStep1 from '../../static/img/LogoStep1.png'
+import LogoStep2 from '../../static/img/LogoStep2.png'
+import LogoStep3 from '../../static/img/LogoStep3.png'
 
 class CreateTripStep2 extends React.Component {
     constructor(props) {
@@ -35,15 +37,32 @@ class CreateTripStep2 extends React.Component {
         return (
             <div>
                 <div className="top-page mb-3">
-                    <div className="content-page py-2">
-                        <div className="step-createtrip">
-
+                    <div className=" container content-page py-2">
+                        <div className="step-progress step-2 mt-3">
+                            <ul>
+                                <li>
+                                <img src={LogoStep1} style={{opacity:"20%"}} /><br />
+                                    <i class="fas fa-check"></i>
+                                    <p>สร้างแผน</p>
+                                </li>
+                                <li>
+                                <img src={LogoStep2} style={{opacity:'80%'}} /><br />
+                                    {/* <i class="fas fa-sync-alt"></i> */}
+                                    <i class="fas fa-sync-alt"></i>
+                                    <p>ระบุรายละเอียด</p>
+                                </li>
+                                <li>
+                                <img src={LogoStep3} style={{opacity:'20%'}} /><br />
+                                    <i class="fas fa-times"></i>
+                                    <p>เสร็จสิ้น</p>
+                                </li>
+                            </ul>
                         </div>
                         <div className="header-trip" style={{ marginLeft: "80px" }}>
                             <h3>ชื่อทริป : {this.props.TripForm.demoTripName}</h3>
                             <h4>จังหวัด : {this.props.TripForm.demoProvince}</h4>
                         </div>
-                        <div className="container py-3">
+                        <div className="py-3">
                             <h5 className="text-center">{this.props.TripForm.demoDate}</h5>
                             {/* {this.props.TripForm.totalDate.map((PerDay, key) => {
                                 return (

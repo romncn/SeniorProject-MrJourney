@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import '../../static/css/App.css';
+import '../../static/css/Stepper.css';
+import LogoStep1 from '../../static/img/LogoStep1.png'
+import LogoStep2 from '../../static/img/LogoStep2.png'
+import LogoStep3 from '../../static/img/LogoStep3.png'
 
 
 const InputFrom = (props) => {
@@ -65,17 +69,37 @@ class CreateTripStep1 extends React.Component {
 
                 <div className="top-page">
                     {/* <NavTripPage firsttitle={"ยินดีต้อนรับ"} secondtitle={"เริ่มสร้างแผนการท่องเที่ยว"} ></NavTripPage> */}
-                    <div className="content-page py-2">
-                        <div className="step-createtrip">
-                           
+
+                    <div className=" container content-page py-2">
+
+                        <div className="step-progress step-1 mt-3">
+                            <ul>
+                                <li>
+                                    <img src={LogoStep1} style={{opacity:"80%"}} /><br />
+                                    <i class="fas fa-sync-alt"></i>
+                                    <p>สร้างแผน</p>
+                                </li>
+                                <li>
+                                    <img src={LogoStep2} style={{opacity:'20%'}} /><br />
+                                    {/* <i class="fas fa-sync-alt"></i> */}
+                                    <i class="fas fa-times"></i>
+                                    <p>ระบุรายละเอียด</p>
+                                </li>
+                                <li>
+                                    <img src={LogoStep3} style={{opacity:'20%'}} /><br />
+                                    <i class="fas fa-times"></i>
+                                    <p>เสร็จสิ้น</p>
+                                </li>
+                            </ul>
                         </div>
-                        <div className="container py-3">
+
+                        <div className="py-3">
 
                             <form>
                                 <div className="form-group">
 
                                     <div className="InputFrom">
-                                        <div className="pt-4">
+                                        <div className="">
                                             <label htmlFor="exampleInputEmail1">ชื่อทริป<span className="p-1" style={{ color: "red" }}>*</span></label>
                                             <input type='text' className="form-control" value={this.props.TripForm.demoTripName} onChange={(e) => this.props.handleForm(e, "demoTripName")} placeholder="ใส่ชื่อทริปท่องเที่ยว" />
                                         </div>
@@ -84,7 +108,7 @@ class CreateTripStep1 extends React.Component {
                                         <div className="pt-4">
                                             <label htmlFor="exampleInputEmail1" >จังหวัด<span className="p-1" style={{ color: "red" }}>*</span></label>
                                             <div className="btn-group pl-5">
-                                                <button className="btn province-btn dropdown-toggle" value={this.props.TripForm.demoProvince} onChange={(e) => this.props.handleForm(e, "demoProvince")} type="button"  id="dropdownMenuButton" data-toggle="dropdown" >
+                                                <button className="btn province-btn dropdown-toggle" value={this.props.TripForm.demoProvince} onChange={(e) => this.props.handleForm(e, "demoProvince")} type="button" id="dropdownMenuButton" data-toggle="dropdown" >
                                                     เลือกจังหวัด
                                                 </button>
                                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -101,8 +125,9 @@ class CreateTripStep1 extends React.Component {
 
 
                                 <div className="buttom-page py-3">
-                                    <div className="container py-3">
-                                        <div className=" col-2 float-right mr-4">
+                                    <div className="py-3" style={{marginBottom:"25px",marginTop:"20px"}}>
+                                        {/* <div className=" col-2 float-right "> */}
+                                        <div className="next-btn">
                                             <button type="submit" className="btn btn-warning btn-lg btn-block text-white" onClick={this.props.handleStep}>{this.props.nextButton}</button>
                                         </div>
                                     </div>

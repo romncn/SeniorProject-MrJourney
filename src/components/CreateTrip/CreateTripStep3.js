@@ -2,8 +2,9 @@ import React from 'react';
 import '../../static/css/App.css';
 import { Link } from 'react-router';
 import Logo from '../../static/img/success.png';
-
-
+import LogoStep1 from '../../static/img/LogoStep1.png'
+import LogoStep2 from '../../static/img/LogoStep2.png'
+import LogoStep3 from '../../static/img/LogoStep3.png'
 
 class CreateTripStep3 extends React.Component {
 
@@ -13,11 +14,27 @@ class CreateTripStep3 extends React.Component {
 
                 <div className="top-page">
 
-                    <div className="content-page py-2">
-                        <div className="step-createtrip">
-                           
+                    <div className="container content-page py-2">
+                    <div className="step-progress step-3 mt-3">
+                            <ul>
+                                <li>
+                                <img src={LogoStep1} style={{opacity:"20%"}} /><br />
+                                    <i class="fas fa-check"></i>
+                                    <p>สร้างแผน</p>
+                                </li>
+                                <li>
+                                <img src={LogoStep2} style={{opacity:'20%'}} /><br/>
+                                    <i class="fas fa-check"></i>
+                                    <p>ระบุรายละเอียด</p>
+                                </li>
+                                <li>
+                                <img src={LogoStep3} style={{opacity:'80%'}} /><br />
+                                    <i class="fas fa-check"></i>
+                                    <p>เสร็จสิ้น</p>
+                                </li>
+                            </ul>
                         </div>
-                        <div className="container py-3">
+                        <div className="py-3">
                             <div className="text-center">
                                 <img src={Logo} height="75" width="75" alt="Success"></img>
                                 <h1 className="pt-2">เสร็จสิ้น!</h1>
