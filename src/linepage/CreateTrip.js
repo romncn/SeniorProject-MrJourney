@@ -21,19 +21,19 @@ class CreateTrip extends React.Component {
             Trip: {
                 demoTripName: '',
                 demoProvince: '',
-                demoDate: '2020-02-02',
+                demoDate: '',
                 totalDay: 0,
                 totalDate: [
                     {
                         eventDate: '2020-02-02',
                         event: [
                             {
-                                eventName:'ดอยสุเทพ',
+                                eventName: 'ดอยสุเทพ',
                                 eventTime: 0,
                                 eventType: 'กินข้าว'
                             },
                             {
-                                eventName:'ดอยคำ',
+                                eventName: 'ดอยคำ',
                                 eventTime: 0,
                                 eventType: 'กินข้าว'
                             }
@@ -43,12 +43,12 @@ class CreateTrip extends React.Component {
                         eventDate: '2020-03-02',
                         event: [
                             {
-                                eventName:'ดอยบางมด',
+                                eventName: 'ดอยบางมด',
                                 eventTime: 0,
                                 eventType: 'นอน'
                             },
                             {
-                                eventName:'ดอยสัตหีบ',
+                                eventName: 'ดอยสัตหีบ',
                                 eventTime: 0,
                                 eventType: 'แดกเต่า'
                             }
@@ -60,20 +60,39 @@ class CreateTrip extends React.Component {
     }
 
     // AddEvent = (e) => {
-        
+
     // }
 
-    onhandleFormText = async (e, name) => {
+    // onhandleFormText = async (e, name) => {
+    //     let v = e.target.value
+    //     await this.setState(prevState => ({
+    //         Trip: {                   // object that we want to update
+    //             ...prevState.Trip,    // keep all other key-value pairs
+    //             [name]: v       // update the value of specific key
+    //         }
+    //     }))
+    //     console.log(this.state.Trip.demoTripName);
+    //     console.log('จังหวัด',this.state.Trip.demoProvince);
+    // }
+
+
+
+
+
+    onhandleFormText = async (e) => {
         let v = e.target.value
         await this.setState(prevState => ({
             Trip: {                   // object that we want to update
-                ...prevState.Trip,    // keep all other key-value pairs
-                [name]: v       // update the value of specific key
+                ...prevState.Trip,   // keep all other key-value pairs
+                [e.target.name]: v   // update the value of specific key
             }
         }))
-        console.log(this.state.Trip.demoTripName);
-
+        // console.log(this.state.Trip.demoTripName);
+        // console.log('จังหวัด',this.state.Trip.demoProvince);
     }
+
+
+
     handleComponent = () => {
         if (this.state.StepComponent === 1) {
             return <CreateTripStep1 nextButton="ต่อไป" handleStep={this.handleNextComponent} TripForm={this.state.Trip} handleForm={this.onhandleFormText}></CreateTripStep1>

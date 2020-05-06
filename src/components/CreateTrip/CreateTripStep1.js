@@ -75,18 +75,18 @@ class CreateTripStep1 extends React.Component {
                         <div className="step-progress step-1 mt-3">
                             <ul>
                                 <li>
-                                    <img src={LogoStep1} style={{opacity:"80%"}} /><br />
+                                    <img src={LogoStep1} style={{ opacity: "80%" }} /><br />
                                     <i class="fas fa-sync-alt"></i>
                                     <p>สร้างแผน</p>
                                 </li>
                                 <li>
-                                    <img src={LogoStep2} style={{opacity:'20%'}} /><br />
+                                    <img src={LogoStep2} style={{ opacity: '20%' }} /><br />
                                     {/* <i class="fas fa-sync-alt"></i> */}
                                     <i class="fas fa-times"></i>
                                     <p>ระบุรายละเอียด</p>
                                 </li>
                                 <li>
-                                    <img src={LogoStep3} style={{opacity:'20%'}} /><br />
+                                    <img src={LogoStep3} style={{ opacity: '20%' }} /><br />
                                     <i class="fas fa-times"></i>
                                     <p>เสร็จสิ้น</p>
                                 </li>
@@ -104,28 +104,34 @@ class CreateTripStep1 extends React.Component {
                                             <input type='text' className="form-control" value={this.props.TripForm.demoTripName} onChange={(e) => this.props.handleForm(e, "demoTripName")} placeholder="ใส่ชื่อทริปท่องเที่ยว" />
                                         </div>
                                     </div>
+
                                     <div className="InputFrom">
                                         <div className="pt-4">
                                             <label htmlFor="exampleInputEmail1" >จังหวัด<span className="p-1" style={{ color: "red" }}>*</span></label>
                                             <div className="btn-group pl-5">
-                                                <button className="btn province-btn dropdown-toggle" value={this.props.TripForm.demoProvince} onChange={(e) => this.props.handleForm(e, "demoProvince")} type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-                                                    เลือกจังหวัด
-                                                </button>
-                                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a className="dropdown-item">กรุงเทพ</a>
-                                                    <a className="dropdown-item">ระยอง</a>
-                                                    <a className="dropdown-item">ชลบุรี</a>
-                                                </div>
+                                                <select className=" btn province-btn"
+                                                    value={this.props.TripForm.demoProvince} onChange={(e) => this.props.handleForm(e, "demoProvince")}
+                                                    id="dropdownMenuButton">
+                                                    <option value="กรุงเทพ">กรุงเทพ</option>
+                                                    <option value="ระยอง">ระยอง</option>
+                                                    <option value="เชียงใหม่">เชียงใหม่</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <InputFrom inputname="วันที่เริ่มเดินทาง" inputtype="date" inputid="example-date-input" textinplaceholder="mm-dd-yyyy"></InputFrom>
+                                    <div className="InputFrom">
+                                        <div className="">
+                                            <label htmlFor="exampleInputEmail1">เลือกวันเริ่มเดินทาง<span className="p-1" style={{ color: "red" }}>*</span></label>
+                                            <input type='date' className="form-control" value={this.props.TripForm.demoDate} onChange={(e) => this.props.handleForm(e, "demoDate")} />
+                                        </div>
+                                    </div>
+                                    {/* <InputFrom inputname="วันที่เริ่มเดินทาง" inputtype="date" inputid="example-date-input" textinplaceholder="mm-dd-yyyy"></InputFrom> */}
                                     <InputAddDate></InputAddDate>
                                 </div>
 
 
                                 <div className="buttom-page py-3">
-                                    <div className="py-3" style={{marginBottom:"25px",marginTop:"20px"}}>
+                                    <div className="py-3" style={{ marginBottom: "25px", marginTop: "20px" }}>
                                         {/* <div className=" col-2 float-right "> */}
                                         <div className="next-btn">
                                             <button type="submit" className="btn btn-warning btn-lg btn-block text-white" onClick={this.props.handleStep}>{this.props.nextButton}</button>
