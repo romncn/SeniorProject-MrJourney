@@ -80,11 +80,13 @@ class CreateTrip extends React.Component {
 
 
     onhandleFormText = async (e) => {
-        let v = e.target.value
+        let value = e.target.value
+        let name = e.target.name
+        // let {value,name} = e.target
         await this.setState(prevState => ({
             Trip: {                   // object that we want to update
                 ...prevState.Trip,   // keep all other key-value pairs
-                [e.target.name]: v   // update the value of specific key
+                [name]: value   // update the value of specific key
             }
         }))
         // console.log(this.state.Trip.demoTripName);

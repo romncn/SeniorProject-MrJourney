@@ -5,36 +5,6 @@ import LogoStep1 from '../../static/img/LogoStep1.png'
 import LogoStep2 from '../../static/img/LogoStep2.png'
 import LogoStep3 from '../../static/img/LogoStep3.png'
 
-
-const InputFrom = (props) => {
-    return (
-        <div className="InputFrom">
-            <div className="pt-4">
-                <label htmlFor="exampleInputEmail1">{props.inputname}<span className="p-1" style={{ color: "red" }}>*</span></label>
-                <input type={props.inputtype} className="form-control" value={props.InputFromValue} onChange={props.OnHandleForm} id={props.inputid} placeholder={props.textinplaceholder} />
-            </div>
-        </div>
-    )
-}
-// const SelectProvince = () => {
-//     return (
-//         <div className="InputFrom">
-//             <div class="pt-4">
-//                 <label for="exampleInputEmail1" >จังหวัด<span className="p-1" style={{ color: "red" }}>*</span></label>
-//                 <div class="btn-group pl-5">
-//                     <button class="btn province-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-//                         เลือกจังหวัด
-//                     </button>
-//                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-//                         <a class="dropdown-item">กรุงเทพ</a>
-//                         <a class="dropdown-item">ระยอง</a>
-//                         <a class="dropdown-item">ชลบุรี</a>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
 const InputAddDate = () => {
     const [dateNum, setDateNum] = useState(0);
     return (
@@ -61,7 +31,29 @@ const InputAddDate = () => {
 
 class CreateTripStep1 extends React.Component {
 
+    constructor() {
+        super()
+        this.state = {
+            thaiprovince: [
+            'กรุงเทพมหานคร','กระบี่','กาญจนบุรี','กาฬสินธุ์','กำแพงเพชร',
+            'ขอบแก่น',
+            'จันทบุรี','ฉะเชิงเทรา','ชลบุรี','ชัยนาท','ชัยภูมิ','ชุมพร','เชียงราย','เชียงใหม่',
+            'ตรัง','ตราด','ตาก',
+            'นครนายก','นครปฐม','นครพนม','นครราชสีมา','นครศรีธรรมราข','นครสวรรค์','นนทบุรี','นราธิวาส','น่าน',
+            'บึงกาฬ','บุรีรัมย์',
+            'ปทุมธานี','ประจวบคีรีขันธ์','ปราจีนบุรี','ปัตตานี',
+            'พระนครศรีอยุธยา','พังงา','พัทลุง','พิจิตร','พิษณุโลก','เพชรบุรี','เพชรบูรณ์','แพร่','พะเยา',
+            'ภูเก็ต',
+            'มหาสารคาม','มุกดาหาร','แม่ฮ่องสอน',
+            'ยะลา','ยโสธร',
+            'ร้อยเอ็ด','ระนอง','ระยอง','ราชบุรี',
+            'ลพบุรี','ลำปาง','ลำพูน','เลย',
+            'ศรีสะเกษ',
+            'สกลนคร','สงขลา','สตูล','สมุทรปราการ','สมุทรสงคราม','สมุทรสาคร','สระแก้ว','สระบุรี','สิงห์บุรี','สุโขทัย','สุพรรณบุรี','สุราษฎร์ธานี','สุรินทร์',
+            'หนองคาย','หนองบัวลำภู','อ่างทอง','อุดรธานี','อุทัยธานี','อุตรดิตถ์','อุบลราชธานี','อำนาจเจริญ']
 
+        }
+    }
 
     render() {
         return (
@@ -101,7 +93,11 @@ class CreateTripStep1 extends React.Component {
                                     <div className="InputFrom">
                                         <div className="">
                                             <label htmlFor="exampleInputEmail1">ชื่อทริป<span className="p-1" style={{ color: "red" }}>*</span></label>
-                                            <input type='text' className="form-control" value={this.props.TripForm.demoTripName} onChange={(e) => this.props.handleForm(e, "demoTripName")} placeholder="ใส่ชื่อทริปท่องเที่ยว" />
+                                            <input type='text' className="form-control"
+                                                name="demoTripName"
+                                                value={this.props.TripForm.demoTripName}
+                                                onChange={(e) => this.props.handleForm(e)}
+                                                placeholder="ใส่ชื่อทริปท่องเที่ยว" />
                                         </div>
                                     </div>
 
@@ -109,20 +105,27 @@ class CreateTripStep1 extends React.Component {
                                         <div className="pt-4">
                                             <label htmlFor="exampleInputEmail1" >จังหวัด<span className="p-1" style={{ color: "red" }}>*</span></label>
                                             <div className="btn-group pl-5">
-                                                <select className=" btn province-btn"
-                                                    value={this.props.TripForm.demoProvince} onChange={(e) => this.props.handleForm(e, "demoProvince")}
+                                                <select className=" btn province-btn dropdown-toggle"
+                                                    name="demoProvince"
+                                                    value={this.props.TripForm.demoProvince}
+                                                    onChange={(e) => this.props.handleForm(e)}
                                                     id="dropdownMenuButton">
-                                                    <option value="กรุงเทพ">กรุงเทพ</option>
-                                                    <option value="ระยอง">ระยอง</option>
-                                                    <option value="เชียงใหม่">เชียงใหม่</option>
+                                                    {this.state.thaiprovince.map((ThaiProvinceShow) => {
+                                                        return (
+                                                            <option value={ThaiProvinceShow}>{ThaiProvinceShow}</option>
+                                                        )
+                                                    })}
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="InputFrom">
-                                        <div className="">
+                                        <div className="pt-4">
                                             <label htmlFor="exampleInputEmail1">เลือกวันเริ่มเดินทาง<span className="p-1" style={{ color: "red" }}>*</span></label>
-                                            <input type='date' className="form-control" value={this.props.TripForm.demoDate} onChange={(e) => this.props.handleForm(e, "demoDate")} />
+                                            <input type='date' className="form-control"
+                                                name="demoDate"
+                                                value={this.props.TripForm.demoDate}
+                                                onChange={(e) => this.props.handleForm(e)} />
                                         </div>
                                     </div>
                                     {/* <InputFrom inputname="วันที่เริ่มเดินทาง" inputtype="date" inputid="example-date-input" textinplaceholder="mm-dd-yyyy"></InputFrom> */}
