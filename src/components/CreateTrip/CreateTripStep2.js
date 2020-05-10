@@ -102,7 +102,6 @@ class CreateTripStep2 extends React.Component {
                                                 <div className="container">
                                                     <div className="row py-2">
                                                         <div className="col-9">
-
                                                             <span className="float-left">
                                                                 {eventDetail.eventName}
                                                                 <br />{eventDetail.eventTime}

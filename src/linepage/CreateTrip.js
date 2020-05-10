@@ -15,15 +15,13 @@ class CreateTrip extends React.Component {
         super(props)
         this.state = {
             StepComponent: 1,
-            InputTripName: '',
 
             Trip: {
                 demoTripName: '',
                 demoProvince: '',
                 demoDate: '',
                 numberAddDate: 1,
-                // EndDate: '2020-02-02',
-                totalDay: 0,
+                // EndDate: '2020-02-02',  
                 totalDate: [{}]
                 // totalDate: [
                 //     {
@@ -46,26 +44,6 @@ class CreateTrip extends React.Component {
         }
     }
 
-    // AddEvent = (e) => {
-
-    // }
-
-    // onhandleFormText = async (e, name) => {
-    //     let v = e.target.value
-    //     await this.setState(prevState => ({
-    //         Trip: {                   // object that we want to update
-    //             ...prevState.Trip,    // keep all other key-value pairs
-    //             [name]: v       // update the value of specific key
-    //         }
-    //     }))
-    //     console.log(this.state.Trip.demoTripName);
-    //     console.log('จังหวัด',this.state.Trip.demoProvince);
-    // }
-
-
-
-
-
     onhandleFormText = async (e) => {
         let value = e.target.value
         let name = e.target.name
@@ -77,26 +55,10 @@ class CreateTrip extends React.Component {
                 [name]: value,  // update the value of specific key
             }
         }))
-        // console.log(this.state.Trip.demoTripName);
-        // console.log('จังหวัด',this.state.Trip.demoProvince);
     }
 
 
-
-    // handelAddDate = () => {
-
-    //     this.setState(prevState => ({
-    //         Trip: {
-    //             ...prevState.Trip,
-    //             EndDate: momentjs(this.state.Trip.EndDate).add(1, 'day').format('llll')
-    //         }
-    //     }))
-    // }
-
-
-
-
-    handleComponent = () => {
+    handleTripComponent = () => {
         if (this.state.StepComponent === 1) {
             return <CreateTripStep1 nextButton="ต่อไป" 
                     handleStep={this.handleNextComponentStep1} 
@@ -184,7 +146,7 @@ class CreateTrip extends React.Component {
                     <div className="Content-Component">
 
                         {/* {this.state.Component} */}
-                        {this.handleComponent()}
+                        {this.handleTripComponent()}
                        
                     </div>
                 </div>
