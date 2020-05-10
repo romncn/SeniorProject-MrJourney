@@ -14,13 +14,17 @@ const InputAddDate = () => {
             <div className="input-group">
 
                 <span className="input-group-btn">
-                    <button type="button" className="btn btn-default btn-number" data-type="minus" data-field="quant[1]" onClick={() => { setDateNum(dateNum - 1) }}>
+                    <button type="button" className="btn btn-default btn-number" data-type="minus" data-field="quant[1]"
+                        onClick={() => { setDateNum(dateNum - 1) }}>
                         <span className="fas fa-minus"></span>
                     </button>
                 </span>
+
                 <input type="text" name="quant[1]" className="form-control input-number" value={dateNum} min="1" max="10" />
+
                 <span className="input-group-btn">
-                    <button type="button" className="btn btn-default btn-number" data-type="plus" data-field="quant[1]" onClick={() => { setDateNum(dateNum + 1) }}>
+                    <button type="button" className="btn btn-default btn-number" data-type="plus" data-field="quant[1]"
+                        onClick={() => { setDateNum(dateNum + 1) }}>
                         <span className="fas fa-plus" aria-hidden="true"></span>
                     </button>
                 </span>
@@ -35,27 +39,28 @@ class CreateTripStep1 extends React.Component {
         super()
         this.state = {
             thaiprovince: [
-            'กรุงเทพมหานคร','กระบี่','กาญจนบุรี','กาฬสินธุ์','กำแพงเพชร',
-            'ขอบแก่น',
-            'จันทบุรี','ฉะเชิงเทรา','ชลบุรี','ชัยนาท','ชัยภูมิ','ชุมพร','เชียงราย','เชียงใหม่',
-            'ตรัง','ตราด','ตาก',
-            'นครนายก','นครปฐม','นครพนม','นครราชสีมา','นครศรีธรรมราข','นครสวรรค์','นนทบุรี','นราธิวาส','น่าน',
-            'บึงกาฬ','บุรีรัมย์',
-            'ปทุมธานี','ประจวบคีรีขันธ์','ปราจีนบุรี','ปัตตานี',
-            'พระนครศรีอยุธยา','พังงา','พัทลุง','พิจิตร','พิษณุโลก','เพชรบุรี','เพชรบูรณ์','แพร่','พะเยา',
-            'ภูเก็ต',
-            'มหาสารคาม','มุกดาหาร','แม่ฮ่องสอน',
-            'ยะลา','ยโสธร',
-            'ร้อยเอ็ด','ระนอง','ระยอง','ราชบุรี',
-            'ลพบุรี','ลำปาง','ลำพูน','เลย',
-            'ศรีสะเกษ',
-            'สกลนคร','สงขลา','สตูล','สมุทรปราการ','สมุทรสงคราม','สมุทรสาคร','สระแก้ว','สระบุรี','สิงห์บุรี','สุโขทัย','สุพรรณบุรี','สุราษฎร์ธานี','สุรินทร์',
-            'หนองคาย','หนองบัวลำภู','อ่างทอง','อุดรธานี','อุทัยธานี','อุตรดิตถ์','อุบลราชธานี','อำนาจเจริญ']
+                'กรุงเทพมหานคร', 'กระบี่', 'กาญจนบุรี', 'กาฬสินธุ์', 'กำแพงเพชร',
+                'ขอบแก่น',
+                'จันทบุรี', 'ฉะเชิงเทรา', 'ชลบุรี', 'ชัยนาท', 'ชัยภูมิ', 'ชุมพร', 'เชียงราย', 'เชียงใหม่',
+                'ตรัง', 'ตราด', 'ตาก',
+                'นครนายก', 'นครปฐม', 'นครพนม', 'นครราชสีมา', 'นครศรีธรรมราข', 'นครสวรรค์', 'นนทบุรี', 'นราธิวาส', 'น่าน',
+                'บึงกาฬ', 'บุรีรัมย์',
+                'ปทุมธานี', 'ประจวบคีรีขันธ์', 'ปราจีนบุรี', 'ปัตตานี',
+                'พระนครศรีอยุธยา', 'พังงา', 'พัทลุง', 'พิจิตร', 'พิษณุโลก', 'เพชรบุรี', 'เพชรบูรณ์', 'แพร่', 'พะเยา',
+                'ภูเก็ต',
+                'มหาสารคาม', 'มุกดาหาร', 'แม่ฮ่องสอน',
+                'ยะลา', 'ยโสธร',
+                'ร้อยเอ็ด', 'ระนอง', 'ระยอง', 'ราชบุรี',
+                'ลพบุรี', 'ลำปาง', 'ลำพูน', 'เลย',
+                'ศรีสะเกษ',
+                'สกลนคร', 'สงขลา', 'สตูล', 'สมุทรปราการ', 'สมุทรสงคราม', 'สมุทรสาคร', 'สระแก้ว', 'สระบุรี', 'สิงห์บุรี', 'สุโขทัย', 'สุพรรณบุรี', 'สุราษฎร์ธานี', 'สุรินทร์',
+                'หนองคาย', 'หนองบัวลำภู', 'อ่างทอง', 'อุดรธานี', 'อุทัยธานี', 'อุตรดิตถ์', 'อุบลราชธานี', 'อำนาจเจริญ']
 
         }
     }
 
     render() {
+
         return (
             <div >
 
@@ -128,8 +133,33 @@ class CreateTripStep1 extends React.Component {
                                                 onChange={(e) => this.props.handleForm(e)} />
                                         </div>
                                     </div>
-                                    {/* <InputFrom inputname="วันที่เริ่มเดินทาง" inputtype="date" inputid="example-date-input" textinplaceholder="mm-dd-yyyy"></InputFrom> */}
-                                    <InputAddDate></InputAddDate>
+                                    {/* <InputAddDate></InputAddDate> */}
+
+
+                                    <div className="col pt-4">
+                                        <label htmlFor="example-date-input">จำนวนวัน<span className="p-1" style={{ color: "red" }}>*</span></label>
+                                        <div className="input-group">
+
+                                            <span className="input-group-btn">
+                                                <button type="button" className="btn btn-default btn-number" data-type="minus" data-field="quant[1]"
+                                                    onClick={this.props.handleFormRemoveDate}>
+                                                    <span className="fas fa-minus"></span>
+                                                </button>
+                                            </span>
+
+                                            <input type="text" name="quant[1]" className="form-control input-number" value={this.props.TripForm.numberAddDate} min="1" max="10" />
+
+                                            <span className="input-group-btn">
+                                                <button type="button" className="btn btn-default btn-number" data-type="plus" data-field="quant[1]"
+                                                    onClick={this.props.handleFormAddDate}>
+                                                    <span className="fas fa-plus" aria-hidden="true"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
 
 
@@ -137,7 +167,8 @@ class CreateTripStep1 extends React.Component {
                                     <div className="py-3" style={{ marginBottom: "25px", marginTop: "20px" }}>
                                         {/* <div className=" col-2 float-right "> */}
                                         <div className="next-btn">
-                                            <button type="submit" className="btn btn-warning btn-lg btn-block text-white" onClick={this.props.handleStep}>{this.props.nextButton}</button>
+                                            <button type="button" className="btn btn-warning btn-lg btn-block text-white"
+                                                onClick={this.props.handleStep}>{this.props.nextButton}</button>
                                         </div>
                                     </div>
                                 </div>
