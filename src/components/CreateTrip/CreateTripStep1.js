@@ -69,7 +69,7 @@ class CreateTripStep1 extends React.Component {
 
                     <div className=" container content-page py-2">
 
-                        <div className="step-progress step-1 mt-3">
+                        <div className="step-progress step-1 mt-3 pt-2" >
                             <ul>
                                 <li>
                                     <img src={LogoStep1} style={{ opacity: "80%" }} /><br />

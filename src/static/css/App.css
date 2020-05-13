@@ -25,6 +25,10 @@ body {
     border-radius: 50%;
     position: relative;
   }
+.login-profile{
+   
+    border-radius: 50%;
+}
 .step-createtrip{
     margin: 20px 60px 30px 60px;
 }

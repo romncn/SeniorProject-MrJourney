@@ -12,7 +12,7 @@ class CreateRoomStep2 extends React.Component {
         return (
             <div>
                 <div className="show-step-room py-2">
-                    <div className="step-progress step-3 mt-3">
+                    <div className="step-progress step-3 mt-3 pt-2">
                         <ul>
                             <li>
                                 <img src={LogoStep1} style={{ opacity: "20%" }} /><br />

@@ -23,6 +23,9 @@ class CreateTrip extends React.Component {
                 numberAddDate: 1,
                 // EndDate: '2020-02-02',  
                 totalDate: [{}]
+
+
+
                 // totalDate: [
                 //     {
                 //         eventDate: '2020-02-02',
@@ -40,9 +43,28 @@ class CreateTrip extends React.Component {
                 //         ]
                 //     },
                 // ]
+                
             }
         }
     }
+
+
+
+
+    // AddEvent = (key) => {
+    //     let data = this.state.Trip.totalDate
+    //     data[key].event.append({
+    //         events: this.props.EventForm.Event
+    //     })
+    //     this.setState(prevState => ({
+    //         Trip: {
+    //             ...prevState.Trip,
+    //             data: data
+    //         }
+    //     }))
+    // }
+
+
 
     onhandleFormText = async (e) => {
         let value = e.target.value
@@ -60,16 +82,21 @@ class CreateTrip extends React.Component {
 
     handleTripComponent = () => {
         if (this.state.StepComponent === 1) {
-            return <CreateTripStep1 nextButton="ต่อไป" 
-                    handleStep={this.handleNextComponentStep1} 
-                    TripForm={this.state.Trip} 
-                    handleForm={this.onhandleFormText}
-                    handleFormAddDate={this.handleNumberAddDate}
-                    handleFormRemoveDate={this.handleNumberRemoveDate}
-                    >
-                    </CreateTripStep1>
+            return <CreateTripStep1 nextButton="ต่อไป"
+                handleStep={this.handleNextComponentStep1}
+                TripForm={this.state.Trip}
+                handleForm={this.onhandleFormText}
+                handleFormAddDate={this.handleNumberAddDate}
+                handleFormRemoveDate={this.handleNumberRemoveDate}
+            >
+            </CreateTripStep1>
         } if (this.state.StepComponent === 2) {
-            return <CreateTripStep2 handleStep={this.handleNextComponentStep2} TripForm={this.state.Trip} handleForm={this.onhandleFormText} handlePreviousStep={this.handlePreviousComponent} ></CreateTripStep2>
+            return <CreateTripStep2
+                handleStep={this.handleNextComponentStep2}
+                TripForm={this.state.Trip}
+                handleForm={this.onhandleFormText}
+                handleSetEvent={this.handleSetEvent}
+                handlePreviousStep={this.handlePreviousComponent} ></CreateTripStep2>
         } if (this.state.StepComponent === 3) {
             return <CreateTripStep3 handleStep={this.handleNextComponent}></CreateTripStep3>
         }
@@ -93,6 +120,17 @@ class CreateTrip extends React.Component {
         }))
     }
 
+    handleSetEvent = (Event, key) => {
+        let AllDate = this.state.Trip.totalDate //new
+
+        AllDate[key].event.push(Event) //add
+        this.setState(prevState => ({
+            Trip: {
+                ...prevState.Trip,
+                totalDate: AllDate //old = new
+            }
+        }))
+    }
 
     setAllDate = (AllTripDate) => {
         for (let index = 0; index < this.state.Trip.numberAddDate; index++) {
@@ -147,7 +185,7 @@ class CreateTrip extends React.Component {
 
                         {/* {this.state.Component} */}
                         {this.handleTripComponent()}
-                       
+
                     </div>
                 </div>
                 <div className="footer-page">

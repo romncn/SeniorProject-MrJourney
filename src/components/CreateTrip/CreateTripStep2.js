@@ -12,35 +12,101 @@ class CreateTripStep2 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            addModalShow: false
+            addModalShow: false,
+            Event: {
+                eventName: '',
+                startEvent: '',
+                endEvent: '',
+                eventType: ''
+            },
+            keyModal: 0
         }
     }
-    Alert = () => {
 
-        Swal.fire({
 
-            text: 'ชื่อสถานที่',
-            input: 'text',
-            inputPlaceholder: 'ระบุกิจกรรมหรือสถานที่ที่จะไป',
-            showCancelButton: false,
-            confirmButtonColor: '#F37945',
-            confirmButtonText: 'Login'
-        })
-
+    onhandleEventForm = async (e) => {
+        let value = e.target.value
+        let name = e.target.name
+        await this.setState(prevState => ({
+            Event: {
+                ...prevState.Event,
+                [name]: value,
+            }
+        }))
     }
 
+    onSelectTypeEat = () => {
+        this.setState(prevState => ({
+            Event: {
+                ...prevState.Event,
+                eventType: this.state.Event.eventType = 'eating'
+            }
+        }))
+    }
+    onSelectTypeTravel = () => {
+        this.setState(prevState => ({
+            Event: {
+                ...prevState.Event,
+                eventType: this.state.Event.eventType = 'travel'
+            }
+        }))
+    }
+    onSelectTypeSleep = () => {
+        this.setState(prevState => ({
+            Event: {
+                ...prevState.Event,
+                eventType: this.state.Event.eventType = 'sleep'
+            }
+        }))
+    }
+
+    // addModalClose = () => {
+    //     this.setState({
+    //         addModalShow: false
+    //     })
+    // }
+      
+
+    addModalClose = (key) => {
+       let Event = this.state.Event
+        // let Trip = this.props.
+        console.log('key',key);
+        this.props.handleSetEvent(Event,key)
+
+        this.setState(prevState => ({
+            addModalShow: false,
+        }))
+    }
+
+
+
+
+    // onSelectTypeTravel = () =>{
+    //     this.state(prevState => ({
+    //         Event: {
+    //             ...prevState.Event,
+    //             eventType : this.state.Event.eventType = "Travel"
+    //         }
+    //     }))
+    // }
+    // onSelectTypeSleep = () =>{
+    //     this.state(prevState => ({
+    //         Event: {
+    //             ...prevState.Event,
+    //             eventType : this.state.Event.eventType = "Sleep"
+    //         }
+    //     }))
+    // }
+
+
     render() {
-        let addModalClose = () =>
-            this.setState({
-                addModalShow: false
-            })
-        console.log(this.props.TripForm);
+
 
         return (
             <div>
                 <div className="top-page mb-3">
                     <div className="container content-page py-2">
-                        <div className=" step-progress step-2 mt-3">
+                        <div className=" step-progress step-2 mt-3 pt-2">
                             <ul>
                                 <li>
                                     <img src={LogoStep1} style={{ opacity: "20%" }} /><br />
@@ -71,6 +137,9 @@ class CreateTripStep2 extends React.Component {
                                     <span className="p-1"> {momentjs(this.props.TripForm.demoDate).format('DD/MM/YYYY')}
                                     </span>
                                     <span className="p-1">{momentjs(this.props.TripForm.demoDate).add(this.props.TripForm.numberAddDate - 1, 'day').format('DD/MM/YYYY')}
+                                        {this.state.Event.eventType}
+                                        {this.state.Event.eventName}
+                                       
                                     </span>
                                 </span>
                             </div>
@@ -93,23 +162,30 @@ class CreateTripStep2 extends React.Component {
                             })} */}
 
                             {this.props.TripForm.totalDate.map((PerDay, key) => {
+                                console.log(key);
+                                
                                 return (
                                     <div class="alert event-box-active border-bottom" >
                                         <span style={{ color: "rgb(241, 82, 19)", fontSize: "24px" }}>{PerDay.eventDate}</span>
                                         <span className="float-right"><i class="fas fa-caret-up"></i></span>
                                         {PerDay.event.map((eventDetail, key) => {
+                                            console.log('evevnt',key);
+                                            
                                             return (
                                                 <div className="container">
                                                     <div className="row py-2">
                                                         <div className="col-9">
                                                             <span className="float-left">
                                                                 {eventDetail.eventName}
-                                                                <br />{eventDetail.eventTime}
+                                                                <br />{eventDetail.startEvent}
                                                             </span>
                                                             <button type="button" class="event-type-btn btn p-0 ml-1 float-right">
                                                                 <span class="shadow fas fa-car"></span></button>
                                                         </div>
                                                         <div className="col-3">
+                                                            {eventDetail.eventType == 'eating'?"eating":""}
+                                                            {eventDetail.eventType == 'travel'?"travel":""}
+                                                            {eventDetail.eventType == 'sleep'?"sleep":""}
                                                             <button type="button" class="event-deleted-btn p-0 ml-1 btn float-right">
                                                                 <span class="shadow fas fa-trash-alt"></span></button>
                                                         </div>
@@ -119,16 +195,26 @@ class CreateTripStep2 extends React.Component {
                                         })}
                                         <p className="text-center"><div className="add-details-button">
                                             <i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }}
-                                                onClick={() => this.setState({ addModalShow: true })}></i>
-                                            <CreateTripModal show={this.state.addModalShow}
-                                                onHide={addModalClose}></CreateTripModal>
+                                                onClick={() => this.setState({ keyModal:key,addModalShow: true })}></i>
+                                            <CreateTripModal
+                                               
+                                                show={this.state.addModalShow}
+                                                onHide={() => this.addModalClose(this.state.keyModal)}
+                                                EventForm={this.state.Event}
+                                                handleEventForm={this.onhandleEventForm}
+                                                onSelectTypeEat={this.onSelectTypeEat}
+                                                onSelectTypeTravel={this.onSelectTypeTravel}
+                                                onSelectTypeSleep={this.onSelectTypeSleep}
+                                            ></CreateTripModal>
+
+                                            {/* <button className="btn btn-primary" onClick={()=> this.addModalClose(key)}>test</button> */}
                                         </div>
                                         </p>
                                     </div>
                                 )
                             })}
 
-                            <div class="alert event-box-active border-bottom" >
+                            {/* <div class="alert event-box-active border-bottom" >
                                 <span style={{ color: "rgb(241, 82, 19)", fontSize: "24px" }}>14 สิงหาคม 2563</span>
                                 <span className="float-right"><i class="fas fa-caret-up"></i></span>
                                 <div className="container">
@@ -151,7 +237,7 @@ class CreateTripStep2 extends React.Component {
                                         onHide={addModalClose}></CreateTripModal>
                                 </div>
                                 </p>
-                            </div>
+                            </div> */}
 
                             <div class="alert event-box-disabled">
 
