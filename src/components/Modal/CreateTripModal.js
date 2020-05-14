@@ -26,13 +26,13 @@ class CreateTripModal extends React.Component {
                             <label for="exampleInputEmail1" className="pt-2">เวลาเริ่ม</label>
                             <input type='time' class="form-control"
                             name="startEvent"
-                            value={this.props.EventForm.eventName}
+                            value={this.props.EventForm.startEvent}
                             onChange={(e)=>this.props.handleEventForm(e)}
                              />
                             <label for="exampleInputEmail1" className="pt-2">เวลาจบ</label>
                             <input type='time' class="form-control" 
-                            name="startEvent"
-                            value={this.props.EventForm.eventName}
+                            name="endEvent"
+                            value={this.props.EventForm.endEvent}
                             onChange={(e)=>this.props.handleEventForm(e)}
                             />
                             <label for="exampleInputEmail1" className="pt-2">ประเภท</label>
@@ -70,7 +70,7 @@ class CreateTripModal extends React.Component {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button style={{color:"white",backgroundColor:"orange",borderColor:"orange"}} 
-                        onClick={this.props.onHide}>เสร็จสิ้น</Button>
+                        onClick={this.props.onConfirm}>เสร็จสิ้น</Button>
                     </Modal.Footer>
                 </Modal>
             </div>

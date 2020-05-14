@@ -60,44 +60,23 @@ class CreateTripStep2 extends React.Component {
         }))
     }
 
-    // addModalClose = () => {
-    //     this.setState({
-    //         addModalShow: false
-    //     })
-    // }
-      
+    addModalClose = () => {
+        this.setState({
+            addModalShow: false
+        })
+    }
 
-    addModalClose = (key) => {
-       let Event = this.state.Event
+
+    addModalConfirm = (key) => {
+        let Event = this.state.Event
         // let Trip = this.props.
-        console.log('key',key);
-        this.props.handleSetEvent(Event,key)
+        console.log('key', key);
+        this.props.handleSetEvent(Event, key)
 
         this.setState(prevState => ({
             addModalShow: false,
         }))
     }
-
-
-
-
-    // onSelectTypeTravel = () =>{
-    //     this.state(prevState => ({
-    //         Event: {
-    //             ...prevState.Event,
-    //             eventType : this.state.Event.eventType = "Travel"
-    //         }
-    //     }))
-    // }
-    // onSelectTypeSleep = () =>{
-    //     this.state(prevState => ({
-    //         Event: {
-    //             ...prevState.Event,
-    //             eventType : this.state.Event.eventType = "Sleep"
-    //         }
-    //     }))
-    // }
-
 
     render() {
 
@@ -137,9 +116,6 @@ class CreateTripStep2 extends React.Component {
                                     <span className="p-1"> {momentjs(this.props.TripForm.demoDate).format('DD/MM/YYYY')}
                                     </span>
                                     <span className="p-1">{momentjs(this.props.TripForm.demoDate).add(this.props.TripForm.numberAddDate - 1, 'day').format('DD/MM/YYYY')}
-                                        {this.state.Event.eventType}
-                                        {this.state.Event.eventName}
-                                       
                                     </span>
                                 </span>
                             </div>
@@ -163,14 +139,13 @@ class CreateTripStep2 extends React.Component {
 
                             {this.props.TripForm.totalDate.map((PerDay, key) => {
                                 console.log(key);
-                                
+
                                 return (
                                     <div class="alert event-box-active border-bottom" >
                                         <span style={{ color: "rgb(241, 82, 19)", fontSize: "24px" }}>{PerDay.eventDate}</span>
                                         <span className="float-right"><i class="fas fa-caret-up"></i></span>
                                         {PerDay.event.map((eventDetail, key) => {
-                                            console.log('evevnt',key);
-                                            
+
                                             return (
                                                 <div className="container">
                                                     <div className="row py-2">
@@ -179,15 +154,35 @@ class CreateTripStep2 extends React.Component {
                                                                 {eventDetail.eventName}
                                                                 <br />{eventDetail.startEvent}
                                                             </span>
-                                                            <button type="button" class="event-type-btn btn p-0 ml-1 float-right">
-                                                                <span class="shadow fas fa-car"></span></button>
+                                                            <div className="m-2">
+                                                                {eventDetail.eventType == 'eating' ?
+                                                                    <button
+                                                                        type="button" class="event-type-btn btn p-0 ml-1 float-right">
+                                                                        <span class="shadow fas fa-utensils"></span>
+                                                                    </button>
+                                                                    : ""}
+                                                                {eventDetail.eventType == 'travel' ?
+                                                                    <button
+                                                                        type="button" class="event-type-btn btn p-0 ml-1 float-right">
+                                                                        <span class="shadow fas fa-car-side"></span>
+                                                                    </button>
+                                                                    : ""}
+
+                                                                {eventDetail.eventType == 'sleep' ?
+                                                                    <button
+                                                                        type="button" class="event-type-btn btn p-0 ml-1 float-right">
+                                                                        <span class="shadow fas fa-bed"></span>
+                                                                    </button>
+                                                                    : ""}
+                                                            </div>
+                                                            {/* <button type="button" class="event-type-btn btn p-0 ml-1 float-right">
+                                                                <span class="shadow fas fa-car"></span></button> */}
                                                         </div>
                                                         <div className="col-3">
-                                                            {eventDetail.eventType == 'eating'?"eating":""}
-                                                            {eventDetail.eventType == 'travel'?"travel":""}
-                                                            {eventDetail.eventType == 'sleep'?"sleep":""}
-                                                            <button type="button" class="event-deleted-btn p-0 ml-1 btn float-right">
-                                                                <span class="shadow fas fa-trash-alt"></span></button>
+                                                            <div className="m-2">
+                                                                <button type="button" class="event-deleted-btn p-0 ml-1 btn float-right">
+                                                                    <span class="shadow fas fa-trash-alt"></span></button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -195,49 +190,23 @@ class CreateTripStep2 extends React.Component {
                                         })}
                                         <p className="text-center"><div className="add-details-button">
                                             <i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }}
-                                                onClick={() => this.setState({ keyModal:key,addModalShow: true })}></i>
+                                                onClick={() => this.setState({ keyModal: key, addModalShow: true })}></i>
                                             <CreateTripModal
-                                               
+
                                                 show={this.state.addModalShow}
-                                                onHide={() => this.addModalClose(this.state.keyModal)}
+                                                onConfirm={() => this.addModalConfirm(this.state.keyModal)}
+                                                onHide={() => this.addModalClose(this.state.keyModal)} //use for closeButton
                                                 EventForm={this.state.Event}
                                                 handleEventForm={this.onhandleEventForm}
                                                 onSelectTypeEat={this.onSelectTypeEat}
                                                 onSelectTypeTravel={this.onSelectTypeTravel}
                                                 onSelectTypeSleep={this.onSelectTypeSleep}
                                             ></CreateTripModal>
-
-                                            {/* <button className="btn btn-primary" onClick={()=> this.addModalClose(key)}>test</button> */}
                                         </div>
                                         </p>
                                     </div>
                                 )
                             })}
-
-                            {/* <div class="alert event-box-active border-bottom" >
-                                <span style={{ color: "rgb(241, 82, 19)", fontSize: "24px" }}>14 สิงหาคม 2563</span>
-                                <span className="float-right"><i class="fas fa-caret-up"></i></span>
-                                <div className="container">
-                                    <div className="row py-2">
-                                        <div className="col-9">
-                                            <span className="float-left">ดอยสุเทพ</span>
-                                            <button type="button" class="event-type-btn btn float-right">
-                                                <span class="shadow fas fa-car"></span></button>
-                                        </div>
-                                        <div className="col-3">
-                                            <button type="button" class="event-deleted-btn btn float-right">
-                                                <span class="shadow fas fa-trash-alt"></span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p className="text-center"><div className="add-details-button">
-                                    <i class="far fa-plus-square fa-2x pt-3" style={{ color: "rgb(241, 82, 19)" }}
-                                        onClick={() => this.setState({ addModalShow: true })}></i>
-                                    <CreateTripModal show={this.state.addModalShow}
-                                        onHide={addModalClose}></CreateTripModal>
-                                </div>
-                                </p>
-                            </div> */}
 
                             <div class="alert event-box-disabled">
 
@@ -249,33 +218,18 @@ class CreateTripStep2 extends React.Component {
                             <div className="buttom-page py-3">
                                 <div className="container py-3">
                                     <div className="col-2 float-left ml-4">
-                                        <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.props.handlePreviousStep}>ย้อนกลับ</button>
+                                        <button type="button" class="btn btn-warning btn-lg btn-block text-white" 
+                                        onClick={this.props.handlePreviousStep}>ย้อนกลับ</button>
                                     </div>
                                     <div className=" col-2 float-right mr-4">
-                                        <button type="button" class="btn btn-warning btn-lg btn-block text-white" onClick={this.props.handleStep}>เสร็จสิ้น</button>
+                                        <button type="button" class="btn btn-warning btn-lg btn-block text-white" 
+                                        onClick={this.props.handleStep}>เสร็จสิ้น</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                {/* <div className="buttom-page">
-                    <div className="col-12">
-                        <div className="row">
-                            <div className="col-3">
-                                <Link to="/CreateTrip" >
-                                    <FooterTripPage footertext={"ย้อนกลับ"}></FooterTripPage>
-                                </Link>
-                            </div>
-                            <div className="col-9">
-                                <Link to="/CreateTrip" >
-                                    <FooterTripPage footertext={"เสร็จสิ้น"}></FooterTripPage>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
 
             </div>
         )
