@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../static/css/App.css';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Logo from '../../static/img/success.png';
 import LogoStep1 from '../../static/img/LogoStep1.png'
 import LogoStep2 from '../../static/img/LogoStep2.png'

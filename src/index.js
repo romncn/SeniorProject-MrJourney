@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router,Route,browserHistory} from 'react-router';
+import 
+{ BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
 import App from './App';
 import CreateTrip from './linepage/CreateTrip';
 import Home from './webpage/Home';
@@ -16,14 +21,31 @@ import CheckTrip from './linepage/CheckTrip';
 // );
 
 ReactDOM.render(
-    <Router history = {browserHistory}>
-        <Route path="/" component={App}/>
-        <Route path="/CheckTrip" component={CheckTrip}/>
-        <Route path="/CreateTrip" component={CreateTrip}/>
-        <Route path="/CreateJoinRoom" component={CreateJoinRoom}/>
-        <Route path="/JoinedRoom" component={JoinedRoom}/>
-        <Route path="/Home" component={Home}/>
-        <Route path="/Profile" component={Profile}/>
+    <Router>
+        
+        <Switch>
+            <Route path="/CheckTrip" >
+                <CheckTrip />
+            </Route>
+            <Route path="/CreateTrip">
+                <CreateTrip />
+            </Route>
+            <Route path="/CreateJoinRoom" >
+                <CreateJoinRoom />
+            </Route>
+            <Route path="/JoinedRoom">
+                <JoinedRoom />
+            </Route>
+            <Route path="/Home">
+                <Home />
+            </Route>
+            <Route path="/Profile">
+                <Profile />
+            </Route>
+            <Route path="/">
+                <App />
+            </Route>
+        </Switch>
         
     </Router>
     ,document.getElementById('root')

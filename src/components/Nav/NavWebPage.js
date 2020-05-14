@@ -3,7 +3,7 @@ import Logo from '../../static/img/navlogo.png';
 import IconProfile from '../../static/img/logojourney.png';
 import "../../static/css/App.css";
 import Swal from 'sweetalert2';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import '../../static/css/Nav.css'
 
 
