@@ -21,12 +21,12 @@ class CreateTrip extends React.Component {
                 demoProvince: '',
                 demoDate: '',
                 numberAddDate: 1,
-                // EndDate: '2020-02-02',  
                 totalDate: [{}]
+            }
+        }
+    }
 
-
-
-                // totalDate: [
+        // totalDate: [
                 //     {
                 //         eventDate: '2020-02-02',
                 //         event: [
@@ -43,27 +43,6 @@ class CreateTrip extends React.Component {
                 //         ]
                 //     },
                 // ]
-                
-            }
-        }
-    }
-
-
-
-
-    // AddEvent = (key) => {
-    //     let data = this.state.Trip.totalDate
-    //     data[key].event.append({
-    //         events: this.props.EventForm.Event
-    //     })
-    //     this.setState(prevState => ({
-    //         Trip: {
-    //             ...prevState.Trip,
-    //             data: data
-    //         }
-    //     }))
-    // }
-
 
 
     onhandleFormText = async (e) => {
@@ -158,8 +137,7 @@ class CreateTrip extends React.Component {
             await this.setState({ StepComponent: this.state.StepComponent + 1 })
         }
     }
-
-
+    
 
     handleNextComponentStep2 = async () => {
         if (this.state.StepComponent !== 3) {

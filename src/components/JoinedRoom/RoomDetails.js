@@ -7,9 +7,9 @@ const RoomDetails = () =>{
         <div className="Room-details py-3">
             <div className="container">
                 <h1>NameTrip</h1>
-                <h3>จังหวัด</h3>
+                <h3>จังหวัด : dasdsda</h3>
                 <h3>วันที่เดินทาง</h3>
-                <h3>เงื่อนไข</h3>
+                <h3>เงื่อนไข : อายุ 18 ปี ขึ้นไป</h3>
                 <div class="pt-4">
                     <label for="exampleInputEmail1">รายละเอียด<span className="p-1" style={{ color: "red" }}>*</span></label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
