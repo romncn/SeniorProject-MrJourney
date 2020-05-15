@@ -8,6 +8,8 @@ const RoomDetails = () =>{
             <div className="container">
                 <h1>NameTrip</h1>
                 <h3>จังหวัด : dasdsda</h3>
+                <h1>NameTrip sdasdadasds</h1>
+                <h3>จังหวัด</h3>
                 <h3>วันที่เดินทาง</h3>
                 <h3>เงื่อนไข : อายุ 18 ปี ขึ้นไป</h3>
                 <div class="pt-4">
