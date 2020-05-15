@@ -6,7 +6,7 @@ const RoomDetails = () =>{
         <div className="col-9">
         <div className="Room-details py-3">
             <div className="container">
-                <h1>NameTrip</h1>
+                <h1>NameTrip sdasdadasds</h1>
                 <h3>จังหวัด</h3>
                 <h3>วันที่เดินทาง</h3>
                 <h3>เงื่อนไข</h3>
