@@ -11,6 +11,7 @@ import CreateTrip from './linepage/CreateTrip';
 import Home from './webpage/Home';
 import CreateJoinRoom from './webpage/CreateJoinRoom';
 import JoinedRoom from './webpage/JoinedRoom';
+import MyOwnerRoom from './webpage/MyOwnerRoom';
 import Profile from './webpage/Profile';
 import CheckTrip from './linepage/CheckTrip';
 
@@ -41,6 +42,9 @@ ReactDOM.render(
             </Route>
             <Route path="/Profile">
                 <Profile />
+            </Route>
+            <Route path="/MyOwnerRoom">
+                <MyOwnerRoom/>
             </Route>
             <Route path="/">
                 <App />
